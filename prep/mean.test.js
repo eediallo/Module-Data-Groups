@@ -1,10 +1,5 @@
-const sumValuesLib = require("./sumValues");
-const sumValues = sumValuesLib.sumValues;
-
-
-function calculateMean(list) {
-  return sumValues(list) / list.length;
-}
+const meanLib = require("./mean");
+const calculateMean = meanLib.calculateMean;
 
 test("Calculates the mean of a list of numbers", () => {
   const list = [3, 50, 7];
