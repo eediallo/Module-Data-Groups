@@ -1,0 +1,10 @@
+{
+    "name": "data-grouping-tdd",
+    "description": "data grouping with test driven development",
+    "devDependencies": {
+        "jest": "^29.7.0"
+    },
+    "scripts": {
+        "test": "jest"
+    }
+}
