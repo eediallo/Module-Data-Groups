@@ -8,3 +8,12 @@ test("calculates the median of a list of odd length", () => {
 
   expect(currentOutPut).toBe(targetOutput);
 });
+
+test("does not modify the input", () => {
+    const list = [1, 2, 3];
+    const currentOutPut = calculateMedian(list);
+    const targetOutput = [1, 2, 3];
+  
+    expect(currentOutPut).toEqual(targetOutput);
+  });
+  
