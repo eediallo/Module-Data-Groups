@@ -1,18 +1,17 @@
-// calculateMedian calculates the median of a list of numbers
+/**
+ * Calculates the median of a given list of numbers.
+ *
+ * @param {number[]} list - An array of numbers.
+ * @returns {number} The median of the list.
+ */
 function calculateMedian(list) {
   const middleIndex = Math.floor(list.length / 2);
   // sort the list array in an ascending order
-  const sortedArr = list.sort((a, b) => a - b);
-  let median = 0;
-  
-  if (list.length % 2 === 0) {
-    // median for even length elements
-    median += (sortedArr[middleIndex - 1] + sortedArr[middleIndex]) / 2;
-  } else {
-    // median for odd length elements
-    median += sortedArr[middleIndex];
-  }
-  return median;
+  const sortedList = list.sort((a, b) => a - b);
+
+  return list.length % 2 === 0
+    ? (sortedList[middleIndex - 1] + sortedList[middleIndex]) / 2
+    : sortedList[middleIndex];
 }
 
 module.exports = {
