@@ -8,7 +8,11 @@ function calculateMedian(list) {
   let median = 0;
   if(list.length % 2 === 0){
     median += (sortedList[middleIndex -1] + sortedList[middleIndex]) / 2
+  } else {
+    median += list[middleIndex]
   }
+
+  return median
 }
 
 module.exports = calculateMedian;
