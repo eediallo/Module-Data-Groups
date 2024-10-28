@@ -6,7 +6,9 @@ function calculateMedian(list) {
   const middleIndex = Math.floor(list.length / 2);
   const sortedList = list.sort((a, b) => a - b);
   let median = 0;
-  
+  if(list.length % 2 === 0){
+    median += (sortedList[middleIndex -1] + sortedList[middleIndex]) / 2
+  }
 }
 
 module.exports = calculateMedian;
