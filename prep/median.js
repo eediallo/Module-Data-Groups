@@ -18,7 +18,7 @@ function isListAnArray(list) {
 }
 
 function calculateMedian(list) {
-  isListAnArray(list); // check if list is an array
+  isListAnArray(list); // check if list is an array and if list items are numbers
 
   const middleIndex = Math.floor(list.length / 2);
   // sort the list array in an ascending order
