@@ -23,11 +23,18 @@ describe("Deduplicate an array", () => {
     const targetOutput = [];
     expect(currentOutput).toEqual(targetOutput);
   });
-});
 
-// Given an array with no duplicates
-// When passed to the dedupe function
-// Then it should return a copy of the original array
+  // Given an array with no duplicates
+  // When passed to the dedupe function
+  // Then it should return a copy of the original array
+  test("return a copy of the original array", () => {
+    const array = [3, 9, 10, 100];
+    const arrayCopy = array;
+    const currentOutput = dedupe(array);
+    const targetOutput = arrayCopy;
+    expect(currentOutput).toEqual(targetOutput);
+  });
+});
 
 // Given an array with strings or numbers
 // When passed to the dedupe function
