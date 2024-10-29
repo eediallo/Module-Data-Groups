@@ -12,11 +12,18 @@ E.g. dedupe([1, 2, 1]) target output: [1, 2]
 */
 
 // Acceptance Criteria:
-
-// Given an empty array
-// When passed to the dedupe function
-// Then it should return an empty array
 test.todo("given an empty array, it returns an empty array");
+describe("Deduplicate an array", () => {
+  // Given an empty array
+  // When passed to the dedupe function
+  // Then it should return an empty array
+  test("given an empty array, it returns an empty array", () => {
+    const array = [];
+    const currentOutput = dedupe(array);
+    const targetOutput = [];
+    expect(currentOutput).toEqual(targetOutput);
+  });
+});
 
 // Given an array with no duplicates
 // When passed to the dedupe function
