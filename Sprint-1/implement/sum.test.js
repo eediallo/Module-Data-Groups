@@ -16,6 +16,13 @@ describe("Sum the numbers in an array", () => {
     const targetOutput = 0;
     expect(currentOutput).toBe(targetOutput);
   });
+
+  test("Given an array with just one number, return that number", () => {
+    const elements = [8];
+    const currentOutput = sum(elements);
+    const targetOutput = 8;
+    expect(currentOutput).toBe(targetOutput);
+  });
 });
 // Given an array with just one number
 // When passed to the sum function
