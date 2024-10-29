@@ -12,7 +12,6 @@ E.g. dedupe([1, 2, 1]) target output: [1, 2]
 */
 
 // Acceptance Criteria:
-test.todo("given an empty array, it returns an empty array");
 describe("Deduplicate an array", () => {
   // Given an empty array
   // When passed to the dedupe function
