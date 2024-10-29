@@ -32,19 +32,15 @@ describe("Find the maximum element of an array of numbers", () => {
     const targetOutput = 100;
     expect(currentOutput).toBe(targetOutput);
   });
+
+  test("Given an array with just negative numbers, return the closest one to zero", () => {
+    const elements = [-99, -10, -100]
+    const currentOutput = findMax(elements);
+    const targetOutput = -10;
+    expect(currentOutput).toBe(targetOutput);
+  });
 });
 
-// Given an array with one number
-// When passed to the max function
-// Then it should return that number
-
-// Given an array with both positive and negative numbers
-// When passed to the max function
-// Then it should return the largest number overall
-
-// Given an array with just negative numbers
-// When passed to the max function
-// Then it should return the closest one to zero
 
 // Given an array with decimal numbers
 // When passed to the max function
