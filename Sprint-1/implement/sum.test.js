@@ -30,11 +30,14 @@ describe("Sum the numbers in an array", () => {
     const targetOutput = -6;
     expect(currentOutput).toBe(targetOutput);
   });
-});
 
-// Given an array containing negative numbers
-// When passed to the sum function
-// Then it should still return the correct total sum
+  test("Given an array containing decimal/float numbers, return the correct total sum", () => {
+    const elements = [-1.2, -2.2, -3.2];
+    const currentOutput = sum(elements);
+    const targetOutput = -6.6;
+    expect(currentOutput).toBe(targetOutput);
+  });
+});
 
 // Given an array with decimal/float numbers
 // When passed to the sum function
