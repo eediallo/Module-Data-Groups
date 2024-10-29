@@ -3,11 +3,7 @@ function sum(elements) {
   if (Array.isArray(elements) && elements.length === 0) {
     return 0;
   }
-
-  if (elements.length === 1) {
-    return elements[0];
-  }
-
+  
   for (let num of elements) {
     if (!isNaN(num) && num % 2 !== 0) {
       sum += parseFloat(num.toFixed(2));
