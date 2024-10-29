@@ -52,7 +52,3 @@ describe("Sum the numbers in an array", () => {
     expect(currentOutput).toBe(targetOutput);
   });
 });
-
-// Given an array with only non-number values
-// When passed to the sum function
-// Then it should return the least surprising value given how it behaves for all other inputs
