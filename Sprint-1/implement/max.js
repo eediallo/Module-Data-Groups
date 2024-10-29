@@ -1,19 +1,15 @@
 function findMax(elements) {
-  let max = 0;
   if (elements.length === 0) {
-    max -= Infinity;
+    return -Infinity;
   }
 
-  if (elements.length === 1) {
-    max += elements[0];
-  }
+  let max = elements[0];
 
   for (let num of elements) {
     if (num > max) {
       max = num;
     }
   }
-
   return max;
 }
 
