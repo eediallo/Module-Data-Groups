@@ -53,12 +53,11 @@ describe("Find the maximum element of an array of numbers", () => {
     const targetOutput = 8;
     expect(currentOutput).toBe(targetOutput);
   });
+
+  test("Given an array with only non-number values, return the least surprising value given how it behaves for all other inputs", () => {
+    const elements = ["hi", "hello", "world"];
+    const currentOutput = findMax(elements);
+    const targetOutput = -Infinity;
+    expect(currentOutput).toBe(targetOutput);
+  });
 });
-
-// Given an array with non-number values
-// When passed to the max function
-// Then it should return the max and ignore non-numeric values
-
-// Given an array with only non-number values
-// When passed to the max function
-// Then it should return the least surprising value given how it behaves for all other inputs
