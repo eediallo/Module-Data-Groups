@@ -44,6 +44,13 @@ describe("Sum the numbers in an array", () => {
     const targetOutput = 10;
     expect(currentOutput).toBe(targetOutput);
   });
+
+  test("Given an array containing non-number values, return the least surprising value given how it behaves for all other inputs", () => {
+    const elements = ["CYF", "ITD", "ITP"];
+    const currentOutput = sum(elements);
+    const targetOutput = 0;
+    expect(currentOutput).toBe(targetOutput);
+  });
 });
 
 // Given an array with only non-number values
