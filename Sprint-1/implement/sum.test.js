@@ -9,12 +9,14 @@ E.g. sum(['hey', 10, 'hi', 60, 10]), target output: 80 (ignore any non-numerical
 const sum = require("./sum.js");
 
 // Acceptance Criteria:
-
-// Given an empty array
-// When passed to the sum function
-// Then it should return 0
-test.todo("given an empty array, returns 0")
-
+describe("Sum the numbers in an array", () => {
+  test("Given an empty array, return 0", () => {
+    const elements = [];
+    const currentOutput = sum(elements);
+    const targetOutput = 0;
+    expect(currentOutput).toBe(targetOutput);
+  });
+});
 // Given an array with just one number
 // When passed to the sum function
 // Then it should return that number
