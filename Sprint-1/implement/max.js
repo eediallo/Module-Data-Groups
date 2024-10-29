@@ -3,6 +3,7 @@ function findMax(elements) {
     return -Infinity;
   }
 
+  //ensure that num in elements is > max initially
   let max = -Infinity;
 
   for (let num of elements) {
