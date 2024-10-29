@@ -9,9 +9,9 @@ function sum(elements) {
   }
 
   for (let num of elements) {
-    if (num % 2 !== 0) {
+    if (!isNaN(num) && num % 2 !== 0) {
       sum += parseFloat(num.toFixed(2));
-    } else {
+    } else if (!isNaN(num)) {
       sum += num;
     }
   }
