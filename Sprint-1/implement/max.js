@@ -1,8 +1,9 @@
+const isEmpty = (elements) => Array.isArray(elements) && elements.length === 0;
+
 function findMax(elements) {
-  if (elements.length === 0) {
+  if (isEmpty(elements)) {
     return -Infinity;
   }
-
   //ensure that num in elements is > max initially
   let max = -Infinity;
 
