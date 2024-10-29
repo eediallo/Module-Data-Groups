@@ -9,8 +9,13 @@ function sum(elements) {
   }
 
   for (let num of elements) {
-    sum += num;
+    if (num % 2 !== 0) {
+      sum += parseFloat(num.toFixed(2));
+    } else {
+      sum += num;
+    }
   }
+  sum = parseFloat(sum.toFixed(2));
 
   return sum;
 }
