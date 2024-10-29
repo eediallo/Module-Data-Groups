@@ -23,10 +23,14 @@ describe("Sum the numbers in an array", () => {
     const targetOutput = 8;
     expect(currentOutput).toBe(targetOutput);
   });
+
+  test("Given an array containing negative numbers, return the correct total sum", () => {
+    const elements = [-1, -2, -3];
+    const currentOutput = sum(elements);
+    const targetOutput = -6;
+    expect(currentOutput).toBe(targetOutput);
+  });
 });
-// Given an array with just one number
-// When passed to the sum function
-// Then it should return that number
 
 // Given an array containing negative numbers
 // When passed to the sum function
