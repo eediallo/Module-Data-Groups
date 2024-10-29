@@ -37,15 +37,14 @@ describe("Sum the numbers in an array", () => {
     const targetOutput = -6.6;
     expect(currentOutput).toBe(targetOutput);
   });
+
+  test("Given an array containing non-number values, return sum of numerical values", () => {
+    const elements = ["CYF", "ITD", "ITP", 4, 6];
+    const currentOutput = sum(elements);
+    const targetOutput = 10;
+    expect(currentOutput).toBe(targetOutput);
+  });
 });
-
-// Given an array with decimal/float numbers
-// When passed to the sum function
-// Then it should return the correct total sum
-
-// Given an array containing non-number values
-// When passed to the sum function
-// Then it should ignore the non-numerical values and return the sum of the numerical elements
 
 // Given an array with only non-number values
 // When passed to the sum function
