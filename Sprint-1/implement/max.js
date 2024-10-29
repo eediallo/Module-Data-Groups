@@ -1,6 +1,4 @@
-function isEmpty(elements) {
-  return Array.isArray(elements) && elements.length === 0;
-}
+const isEmpty = require("./isEmpty.js");
 
 function findMax(elements) {
   if (isEmpty(elements)) {
