@@ -25,6 +25,13 @@ describe("Find the maximum element of an array of numbers", () => {
     const targetOutput = 9;
     expect(currentOutput).toBe(targetOutput);
   });
+
+  test("Given an array with both positive and negative numbers, return the largest number overall", () => {
+    const elements = [9, -10, 100, -100]
+    const currentOutput = findMax(elements);
+    const targetOutput = 100;
+    expect(currentOutput).toBe(targetOutput);
+  });
 });
 
 // Given an array with one number
