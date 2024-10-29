@@ -34,8 +34,14 @@ describe("Deduplicate an array", () => {
     const targetOutput = arrayCopy;
     expect(currentOutput).toEqual(targetOutput);
   });
-});
 
-// Given an array with strings or numbers
-// When passed to the dedupe function
-// Then it should remove the duplicate values, preserving the first occurence of each element
+  // Given an array with strings or numbers
+  // When passed to the dedupe function
+  // Then it should remove the duplicate values, preserving the first occurence of each element
+  test("removes duplicate values in array", () => {
+    const array = [1, 2, 1];
+    const currentOutput = dedupe(array);
+    const targetOutput = [1, 2];
+    expect(currentOutput).toEqual(targetOutput);
+  });
+});
