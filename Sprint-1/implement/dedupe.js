@@ -1,4 +1,6 @@
-function dedupe() {}
+function dedupe() {
+    return []
+}
 
 
 module.exports = dedupe;
