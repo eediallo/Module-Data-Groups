@@ -1,4 +1,6 @@
-const isEmpty = (elements) => Array.isArray(elements) && elements.length === 0;
+function isEmpty(elements) {
+  return Array.isArray(elements) && elements.length === 0;
+}
 
 function findMax(elements) {
   if (isEmpty(elements)) {
