@@ -3,10 +3,10 @@ function findMax(elements) {
     return -Infinity;
   }
 
-  let max = elements[0];
+  let max = -Infinity;
 
   for (let num of elements) {
-    if (num > max) {
+    if (!isNaN(num) && num > max) {
       max = num;
     }
   }
