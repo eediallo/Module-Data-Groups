@@ -46,11 +46,14 @@ describe("Find the maximum element of an array of numbers", () => {
     const targetOutput = 10.03;
     expect(currentOutput).toBe(targetOutput);
   });
-});
 
-// Given an array with decimal numbers
-// When passed to the max function
-// Then it should return the largest decimal number
+  test("Given an array with non-number values, return the max and ignore non-numeric values", () => {
+    const elements = ["hi", "4", "5", 6, 8];
+    const currentOutput = findMax(elements);
+    const targetOutput = 8;
+    expect(currentOutput).toBe(targetOutput);
+  });
+});
 
 // Given an array with non-number values
 // When passed to the max function
