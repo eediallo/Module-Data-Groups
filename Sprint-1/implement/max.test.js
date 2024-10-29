@@ -18,6 +18,13 @@ describe("Find the maximum element of an array of numbers", () => {
     const targetOutput = -Infinity;
     expect(currentOutput).toBe(targetOutput);
   });
+
+  test("given an array with one number, return that number", () => {
+    const elements = [9]
+    const currentOutput = findMax(elements);
+    const targetOutput = 9;
+    expect(currentOutput).toBe(targetOutput);
+  });
 });
 
 // Given an array with one number
