@@ -8,6 +8,12 @@ function findMax(elements) {
     max += elements[0];
   }
 
+  for (let num of elements) {
+    if (num > max) {
+      max = num;
+    }
+  }
+
   return max;
 }
 
