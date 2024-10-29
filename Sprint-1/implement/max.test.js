@@ -13,34 +13,40 @@ We have set things up already so that this file can see your function from the o
 const findMax = require("./max.js");
 describe("Find the maximum element of an array of numbers", () => {
   test("given an empty array, returns -Infinity", () => {
-    const elements = []
+    const elements = [];
     const currentOutput = findMax(elements);
     const targetOutput = -Infinity;
     expect(currentOutput).toBe(targetOutput);
   });
 
   test("given an array with one number, return that number", () => {
-    const elements = [9]
+    const elements = [9];
     const currentOutput = findMax(elements);
     const targetOutput = 9;
     expect(currentOutput).toBe(targetOutput);
   });
 
   test("Given an array with both positive and negative numbers, return the largest number overall", () => {
-    const elements = [9, -10, 100, -100]
+    const elements = [9, -10, 100, -100];
     const currentOutput = findMax(elements);
     const targetOutput = 100;
     expect(currentOutput).toBe(targetOutput);
   });
 
   test("Given an array with just negative numbers, return the closest one to zero", () => {
-    const elements = [-99, -10, -100]
+    const elements = [-99, -10, -100];
     const currentOutput = findMax(elements);
     const targetOutput = -10;
     expect(currentOutput).toBe(targetOutput);
   });
-});
 
+  test("Given an array with decimal numbers, return the closest one to zero, return the largest decimal number", () => {
+    const elements = [10.01, 10.02, 10.03];
+    const currentOutput = findMax(elements);
+    const targetOutput = 10.03;
+    expect(currentOutput).toBe(targetOutput);
+  });
+});
 
 // Given an array with decimal numbers
 // When passed to the max function
