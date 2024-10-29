@@ -10,11 +10,9 @@ function sum(elements) {
     return 0;
   }
   for (let num of elements) {
-    if (isFloat(num)) {
-      sum += parseFloat(num.toFixed(2));
-    } else if (!isNaN(num)) {
-      sum += num;
-    }
+    isFloat(num)
+      ? (sum += parseFloat(num.toFixed(2)))
+      : !isNaN(num) && (sum += num);
   }
   sum = parseFloat(sum.toFixed(2));
   return sum;
