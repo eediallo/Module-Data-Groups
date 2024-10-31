@@ -1,5 +1,6 @@
 function contains(obj, key) {
-  if (Object.keys(obj).length === 0) {
+  const objKeys = Object.keys(obj); // holds keys of obj
+  if (objKeys.length === 0) {
     return false;
   }
 }
