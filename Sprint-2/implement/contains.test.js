@@ -40,15 +40,3 @@ describe("checks an object contains a particular property", () => {
     expect(currentOutput).toEqual(targetOutput);
   });
 });
-
-// Given an object with properties
-// When passed to contains with an existing property name
-// Then it should return true
-
-// Given an object with properties
-// When passed to contains with a non-existent property name
-// Then it should return false
-
-// Given invalid parameters like an array
-// When passed to contains
-// Then it should return false or throw an error
