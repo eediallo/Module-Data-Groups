@@ -11,12 +11,6 @@ E.g. contains({a: 1, b: 2}, 'c') // returns false
 as the object doesn't contains a key of 'c'
 */
 
-// Acceptance criteria:
-
-// Given a contains function
-// When passed an object and a property name
-// Then it should return true if the object contains the property, false otherwise
-
 describe("checks an object contains a particular property", () => {
   test("It will return false when object is empty", () => {
     const obj = {};
@@ -35,6 +29,13 @@ describe("checks an object contains a particular property", () => {
   test("It will return false when object does not contain property", () => {
     const obj = { trainee: "Elhadj", city: "London" };
     const currentOutput = contains(obj, "age");
+    const targetOutput = false;
+    expect(currentOutput).toEqual(targetOutput);
+  });
+
+  test("Return false when param is not an object", () => {
+    const obj = true;
+    const currentOutput = contains(obj);
     const targetOutput = false;
     expect(currentOutput).toEqual(targetOutput);
   });
