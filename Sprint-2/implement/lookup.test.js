@@ -44,10 +44,10 @@ describe("creates a country currency code lookup for multiple codes", () => {
     expect(currentOutput).toEqual(targetOutput);
   });
 
-  // test("return an empty object if param is an empty array", () => {
-  //   const countryCurrencyPairs = [];
-  //   const currentOutput = createLookup(countryCurrencyPairs);
-  //   const targetOutput = {};
-  //   expect(currentOutput).toEqual(targetOutput);
-  // });
+  test("return an empty object if param is an empty array", () => {
+    const countryCurrencyPairs = [];
+    const currentOutput = createLookup(countryCurrencyPairs);
+    const targetOutput = {};
+    expect(currentOutput).toEqual(targetOutput);
+  });
 });

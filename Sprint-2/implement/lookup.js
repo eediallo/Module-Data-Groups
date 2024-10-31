@@ -1,5 +1,11 @@
 function createLookup(countryCurrencyPairs) {
   const codeCurrencyPairs = {};
+  if (
+    Array.isArray(countryCurrencyPairs) &&
+    countryCurrencyPairs.length === 0
+  ) {
+    return codeCurrencyPairs;
+  }
 
   for (let currencyPair of countryCurrencyPairs) {
     const country = currencyPair[0];
