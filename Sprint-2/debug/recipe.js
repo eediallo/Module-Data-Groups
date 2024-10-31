@@ -13,4 +13,4 @@ const recipe = {
 };
 
 console.log(`${recipe.title} serves ${recipe.serves}
-${recipe.ingredients}`);
+${recipe["ingredients"]}`);
