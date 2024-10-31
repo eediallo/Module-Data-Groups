@@ -1,16 +1,13 @@
 function parseQueryString(queryString) {
-  const queryObject = {};
+  const queryParams = {};
 
   // separate querySting with = separator
   const [key, value] = queryString.split("=");
-  queryObject[key] = value; //update queryObject
+  queryParams[key] = value; // mutate queryParams
   if (queryString === "") {
     return {};
   } else {
-    return queryObject;
+    return queryParams;
   }
 }
-
-//parseQueryString("color=blue");
-
 module.exports = parseQueryString;
