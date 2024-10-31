@@ -26,9 +26,16 @@ describe("checks an object contains a particular property", () => {
   });
 
   test("It will return true when object is contains property", () => {
-    const obj = { a: 1, b: 2, c: 'hi' };
+    const obj = { a: 1, b: 2, c: "hi" };
     const currentOutput = contains(obj, "c");
     const targetOutput = true;
+    expect(currentOutput).toEqual(targetOutput);
+  });
+
+  test("It will return false when object does not contain property", () => {
+    const obj = { trainee: "Elhadj", city: "London" };
+    const currentOutput = contains(obj, "age");
+    const targetOutput = false;
     expect(currentOutput).toEqual(targetOutput);
   });
 });
