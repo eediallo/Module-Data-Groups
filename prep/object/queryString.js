@@ -3,11 +3,9 @@ function parseQueryString(queryString) {
 
   // separate querySting with = separator
   const [key, value] = queryString.split("=");
+
   queryParams[key] = value; // mutate queryParams
-  if (queryString === "") {
-    return {};
-  } else {
-    return queryParams;
-  }
+
+  return queryParams;
 }
 module.exports = parseQueryString;
