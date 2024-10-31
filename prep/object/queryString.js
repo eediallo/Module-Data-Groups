@@ -1,5 +1,7 @@
-function parseQueryString(queyString) {
-  return {};
+function parseQueryString(queryString) {
+  if (queryString === "") {
+    return {};
+  }
 }
 
-module.exports = parseQueryString ;
+module.exports = parseQueryString;
