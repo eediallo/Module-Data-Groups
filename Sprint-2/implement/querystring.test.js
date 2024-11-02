@@ -15,3 +15,6 @@ test("return empty object when queryString is empty", () => {
   expect(parseQueryString("")).toEqual({});
 });
 
+test("It will return an empty string when param is not a string", () => {
+  expect(parseQueryString([1, 3, 4])).toEqual({});
+});
