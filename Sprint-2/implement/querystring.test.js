@@ -27,3 +27,10 @@ test("parses querystring values starting with =", () => {
 test("parses querystring values ending with =", () => {
   expect(parseQueryString("equation=x=y+1=")).toEqual({});
 });
+
+test("parses querystring values with 2 params", () => {
+  expect(parseQueryString("equation=x&equation1=y")).toEqual({
+    equation: "x",
+    equation1: "y",
+  });
+});
