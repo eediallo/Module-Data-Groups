@@ -33,6 +33,15 @@ describe("tally array", () => {
     const targetOutput = { a: 2, b: 1, c: 1 };
     expect(currentOutput).toEqual(targetOutput);
   });
+
+  test("Throw an error when given an invalid param", () => {
+    const array = "hello, how are you?";
+    // const currentOutput = tally(array);
+    const targetOutput = "param is not valid";
+    expect(() => {
+      tally(array);
+    }).toThrow(targetOutput);
+  });
 });
 
 // Given an invalid input like a string

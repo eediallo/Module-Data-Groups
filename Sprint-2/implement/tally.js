@@ -1,5 +1,10 @@
 function tally(arr) {
   const frequencyOfItems = {};
+
+  if (!Array.isArray(arr)) {
+    throw new Error("param is not valid");
+  }
+
   if (Array.isArray(arr) && arr.length === 0) {
     return frequencyOfItems;
   }
@@ -15,4 +20,6 @@ function tally(arr) {
   }
   return frequencyOfItems;
 }
+
+//console.log(tally('hello'))
 module.exports = tally;
