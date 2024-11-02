@@ -23,3 +23,7 @@ test("It will return an empty string when param is not a string", () => {
 test("parses querystring values starting with =", () => {
   expect(parseQueryString("=equation=x=y+1")).toEqual({});
 });
+
+test("parses querystring values ending with =", () => {
+  expect(parseQueryString("equation=x=y+1=")).toEqual({});
+});

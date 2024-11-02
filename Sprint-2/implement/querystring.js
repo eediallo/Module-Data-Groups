@@ -4,6 +4,7 @@ function parseQueryString(queryString) {
   if (
     typeof queryString !== "string" ||
     queryString.startsWith("=") ||
+    queryString.endsWith("=") ||
     queryString.trim().length === 0
   ) {
     return queryParams;
