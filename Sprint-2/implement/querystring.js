@@ -1,6 +1,11 @@
 function parseQueryString(queryString) {
   const queryParams = {};
-  if (typeof queryString !== "string" || queryString.length === 0) {
+
+  if (
+    typeof queryString !== "string" ||
+    queryString.startsWith("=") ||
+    queryString.trim().length === 0
+  ) {
     return queryParams;
   }
   const keyValuePairs = queryString.split("&");
