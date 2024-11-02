@@ -26,16 +26,14 @@ describe("tally array", () => {
     const targetOutput = {};
     expect(currentOutput).toEqual(targetOutput);
   });
+
+  test("It will return the counts for each unique item when array has duplicate items", () => {
+    const array = ["a", "a", "b", "c"];
+    const currentOutput = tally(array);
+    const targetOutput = { a: 2, b: 1, c: 1 };
+    expect(currentOutput).toEqual(targetOutput);
+  });
 });
-
-// Given an empty array
-// When passed to tally
-// Then it should return an empty object
-// test.todo("tally on an empty array returns an empty object");
-
-// Given an array with duplicate items
-// When passed to tally
-// Then it should return counts for each unique item
 
 // Given an invalid input like a string
 // When passed to tally
