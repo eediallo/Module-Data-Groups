@@ -14,4 +14,11 @@ describe("invert key value pairs", () => {
     const targetOutput = { 1: "a" };
     expect(currentOutput).toEqual(targetOutput);
   });
+
+  test("It will return an object with the keys and values swapped when param object contains multiple key-value pair", () => {
+    const obj = { a: 1, b: 2, c: 3 };
+    const currentOutput = invert(obj);
+    const targetOutput = { 1: "a", 2: "b", 3: "c" };
+    expect(currentOutput).toEqual(targetOutput);
+  });
 });
