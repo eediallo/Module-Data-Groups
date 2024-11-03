@@ -35,3 +35,20 @@
 // it evaluates to NaN
 
 // d) Write a test for this function to check it works and then fix the implementation of totalTill
+function totalTill(till) {
+  let total = 0;
+  if (Object.prototype.toString.call(till) !== "[object Object]") {
+    return "";
+  }
+
+  for (const [coin, quantity] of Object.entries(till)) {
+  }
+
+  return `£${total / 100}`;
+}
+
+const till = {};
+console.log(totalTill(till));
+//console.log(totalAmount);
+
+module.exports = totalTill;
