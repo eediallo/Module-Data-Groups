@@ -27,6 +27,8 @@
 3. Order the results to find out which word is the most common in the input
 */
 
+const removePunctuation = require("./remove-punctuation.js");
+
 function countWords(str) {
   const isString = typeof str == "string";
   if (!isString) {
@@ -42,15 +44,16 @@ function countWords(str) {
   // convert str to an array
   const words = str.split(" ");
   for (let word of words) {
+    const wordWithoutPunctuation = removePunctuation(word);
     // check if countWordsObj has word, if yes update count, if not maintain count
-    if (countWordsObj.hasOwnProperty(word)) {
-      countWordsObj[word] += count;
+    if (countWordsObj.hasOwnProperty(wordWithoutPunctuation)) {
+      countWordsObj[wordWithoutPunctuation] += count;
     } else {
-      countWordsObj[word] = 1;
+      countWordsObj[wordWithoutPunctuation] = 1;
     }
   }
   return countWordsObj;
 }
 
-//countWords("you and me and you");
+countWords("you and me and you");
 module.exports = countWords;

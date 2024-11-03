@@ -30,4 +30,11 @@ describe("count words", () => {
     };
     expect(currentOutput).toEqual(targetOutput);
   });
+
+  test("It will return an object with punctuations removed", () => {
+    const str = "hello? hello! CYF?";
+    const currentOutput = countWords(str);
+    const targetOutput = { hello: 2, CYF: 1 };
+    expect(currentOutput).toEqual(targetOutput);
+  });
 });
