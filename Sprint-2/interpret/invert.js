@@ -23,6 +23,8 @@ function invert(obj) {
 // the current return value when invert is called is : {key: 2}
 
 // c) What does Object.entries return? Why is it needed in this program?
+// Object.entries returns an array of the given object's own enumerable string-keyed property key-value pairs. ==> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+// it is need to make the swap of the keys and values easier.
 
 // d) Explain why the current return value is different from the target output
 
