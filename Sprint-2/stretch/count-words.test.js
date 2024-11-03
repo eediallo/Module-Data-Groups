@@ -7,4 +7,12 @@ describe("count words", () => {
     const targetOutput = {};
     expect(currentOutput).toEqual(targetOutput);
   });
+
+  test("It will throw an error if param is not of type string", () => {
+    const str = 12;
+    const targetOutput = "Param must be of type string";
+    expect(() => {
+      countWords(str);
+    }).toThrow(targetOutput);
+  });
 });

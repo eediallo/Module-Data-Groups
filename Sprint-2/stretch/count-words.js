@@ -28,6 +28,11 @@
 */
 
 function countWords(str) {
+  const isString = typeof str == "string";
+  if (!isString) {
+    throw new Error("Param must be of type string");
+  }
+
   const countWordsObj = {};
   if (str.trim() === "") {
     return countWordsObj;
