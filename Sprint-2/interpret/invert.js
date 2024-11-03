@@ -27,5 +27,6 @@ function invert(obj) {
 // it is need to make the swap of the keys and values easier.
 
 // d) Explain why the current return value is different from the target output
+// It is different because the key and value are not swapped and value should be in bracket.
 
 // e) Fix the implementation of invert (and write tests to prove it's fixed!)
