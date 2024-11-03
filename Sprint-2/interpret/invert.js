@@ -20,8 +20,7 @@ function invert(obj) {
 // the current return value is: {key: 1}
 
 // b) What is the current return value when invert is called with { a: 1, b: 2 }
-
-// c) What is the target return value when invert is called with {a : 1, b: 2}
+// the current return value when invert is called is : {key: 2}
 
 // c) What does Object.entries return? Why is it needed in this program?
 
