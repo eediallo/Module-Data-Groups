@@ -44,4 +44,11 @@ describe("count words", () => {
     const targetOutput = { hello: 2, cyf: 2 };
     expect(currentOutput).toEqual(targetOutput);
   });
+
+  test("It will return the most common input in order", () => {
+    const str = "hi hello hi hi, a a a a";
+    const currentOutput = countWords(str);
+    const targetOutput = { a: 4, hi: 3, hello: 1 };
+    expect(currentOutput).toEqual(targetOutput);
+  });
 });
