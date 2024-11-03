@@ -34,11 +34,23 @@ function countWords(str) {
   }
 
   const countWordsObj = {};
+  let count = 1;
   if (str.trim() === "") {
     return countWordsObj;
   }
 
+  // convert str to an array
+  const words = str.split(" ");
+  for (let word of words) {
+    // check if countWordsObj has word, if yes update count, if not maintain count
+    if (countWordsObj.hasOwnProperty(word)) {
+      countWordsObj[word] += count;
+    } else {
+      countWordsObj[word] = 1;
+    }
+  }
   return countWordsObj;
 }
 
+//countWords("you and me and you");
 module.exports = countWords;
