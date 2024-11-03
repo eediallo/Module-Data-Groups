@@ -22,4 +22,11 @@ describe("count words", () => {
     const targetOutput = "hello";
     expect(currentOutput).toEqual(targetOutput);
   });
+
+  test("It will removes ? if it exist in string ", () => {
+    const str = ".hello? how are you?";
+    const currentOutput = removePunctuation(str);
+    const targetOutput = "hello how are you";
+    expect(currentOutput).toEqual(targetOutput);
+  });
 });
