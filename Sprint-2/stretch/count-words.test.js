@@ -20,7 +20,7 @@ describe("count words", () => {
     const str = "CYF is a great charity CYF is an amazing charity";
     const currentOutput = countWords(str);
     const targetOutput = {
-      CYF: 2,
+      cyf: 2,
       is: 2,
       a: 1,
       great: 1,
@@ -34,7 +34,14 @@ describe("count words", () => {
   test("It will return an object with punctuations removed", () => {
     const str = "hello? hello! CYF?";
     const currentOutput = countWords(str);
-    const targetOutput = { hello: 2, CYF: 1 };
+    const targetOutput = { hello: 2, cyf: 1 };
+    expect(currentOutput).toEqual(targetOutput);
+  });
+
+  test("It will return an object with punctuations removed and uppercase ignored", () => {
+    const str = "Hello? hello! CYF? cyf";
+    const currentOutput = countWords(str);
+    const targetOutput = { hello: 2, cyf: 2 };
     expect(currentOutput).toEqual(targetOutput);
   });
 });

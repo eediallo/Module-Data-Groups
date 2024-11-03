@@ -40,11 +40,11 @@ function countWords(str) {
   if (str.trim() === "") {
     return countWordsObj;
   }
-  
-  // convert str to an array
-  const words = str.split(" ");
+
+  const words = str.split(" "); // convert str to an array
+
   for (let word of words) {
-    const wordWithoutPunctuation = removePunctuation(word);
+    const wordWithoutPunctuation = removePunctuation(word).toLowerCase(); // removes punctuations and makes lowercase chars
     // check if countWordsObj has word, if yes update count, if not maintain count
     if (countWordsObj.hasOwnProperty(wordWithoutPunctuation)) {
       countWordsObj[wordWithoutPunctuation] += count;
@@ -55,5 +55,5 @@ function countWords(str) {
   return countWordsObj;
 }
 
-countWords("you and me and you");
+countWords("you You and me and you");
 module.exports = countWords;
