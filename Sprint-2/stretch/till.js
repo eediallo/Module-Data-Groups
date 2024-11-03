@@ -38,7 +38,7 @@
 function totalTill(till) {
   let total = 0;
   if (Object.prototype.toString.call(till) !== "[object Object]") {
-    return "";
+    throw new Error("Param must be an object");
   }
 
   for (const [coin, quantity] of Object.entries(till)) {

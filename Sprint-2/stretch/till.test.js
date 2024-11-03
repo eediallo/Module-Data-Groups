@@ -6,4 +6,12 @@ describe("total till()", () => {
 
     expect(totalTill(till)).toEqual("£0");
   });
+
+  test("It will throw an error is param is not valid", () => {
+    const till = "hello";
+
+    expect(() => {
+      totalTill(till);
+    }).toThrow("Param must be an object");
+  });
 });
