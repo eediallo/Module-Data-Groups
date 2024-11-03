@@ -30,17 +30,17 @@
 const removePunctuation = require("./remove-punctuation.js");
 
 function countWords(str) {
-  const isString = typeof str == "string";
-  if (!isString) {
+  const countWordsObj = {};
+  let count = 1;
+
+  if (typeof str !== "string") {
     throw new Error("Param must be of type string");
   }
 
-  const countWordsObj = {};
-  let count = 1;
   if (str.trim() === "") {
     return countWordsObj;
   }
-
+  
   // convert str to an array
   const words = str.split(" ");
   for (let word of words) {
