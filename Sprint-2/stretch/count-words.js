@@ -28,6 +28,7 @@
 */
 
 const removePunctuation = require("./remove-punctuation.js");
+const orderWords = require("./order-word.js");
 
 function countWords(str) {
   const countWordsObj = {};
@@ -52,7 +53,9 @@ function countWords(str) {
       countWordsObj[wordWithoutPunctuation] = 1;
     }
   }
-  return countWordsObj;
+
+  const orderedObject = orderWords(countWordsObj);
+  return orderedObject;
 }
 
 countWords("you You and me and you");
