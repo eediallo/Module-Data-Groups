@@ -22,10 +22,7 @@ function trackFrequency(list) {
   return frequency;
 }
 
-function calculateMode(list) {
-  // Find the value with the highest frequency
-  let maxFreq = 0;
-  let mode;
+function findHighestFrequency(list, maxFreq = 0, mode) {
   const frequency = trackFrequency(list);
   for (let [num, freq] of frequency) {
     if (freq > maxFreq) {
@@ -35,6 +32,13 @@ function calculateMode(list) {
   }
 
   return maxFreq === 0 ? NaN : mode;
+}
+
+function calculateMode(list) {
+  let maxFreq = 0;
+  let mode;
+  mode = findHighestFrequency(list, maxFreq, mode);
+  return mode;
 }
 
 module.exports = calculateMode;
