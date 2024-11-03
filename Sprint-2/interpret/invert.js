@@ -6,15 +6,15 @@
 
 // E.g. invert({x : 10, y : 20}), target output: {"10": "x", "20": "y"}
 
-function invert(obj) {
-  const invertedObj = {};
+// function invert(obj) {
+//   const invertedObj = {};
 
-  for (const [key, value] of Object.entries(obj)) {
-    invertedObj.key = value;
-  }
+//   for (const [key, value] of Object.entries(obj)) {
+//     invertedObj.key = value;
+//   }
 
-  return invertedObj;
-}
+//   return invertedObj;
+// }
 
 // a) What is the current return value when invert is called with { a : 1 }
 // the current return value is: {key: 1}
@@ -30,3 +30,12 @@ function invert(obj) {
 // It is different because the key and value are not swapped and value should be in bracket.
 
 // e) Fix the implementation of invert (and write tests to prove it's fixed!)
+function invert(obj) {
+  const invertedObj = {};
+
+  for (const [key, value] of Object.entries(obj)) {
+    invertedObj[value] = key;
+  }
+
+  return invertedObj;
+}
