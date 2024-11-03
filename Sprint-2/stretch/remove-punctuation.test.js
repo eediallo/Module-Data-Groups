@@ -36,4 +36,11 @@ describe("count words", () => {
     const targetOutput = "hey";
     expect(currentOutput).toEqual(targetOutput);
   });
+
+  test("It will removes comma if it exist in string ", () => {
+    const str = "I,";
+    const currentOutput = removePunctuation(str);
+    const targetOutput = "I";
+    expect(currentOutput).toEqual(targetOutput);
+  });
 });
