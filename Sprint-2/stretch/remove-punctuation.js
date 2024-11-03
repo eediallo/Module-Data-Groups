@@ -1,15 +1,13 @@
+const punctuations = /[.,!?]/g;
+
 function removePunctuation(str) {
-  const isString = typeof str === "string";
-  if (!isString) {
+  if (typeof str !== "string") {
     throw new Error("Param must be of type string");
   }
 
-  const strWithoutPunctuation = "";
-  if (str.trim() === "") {
-    return strWithoutPunctuation;
-  }
-
-  return strWithoutPunctuation;
+  return str.replace(punctuations, "");
 }
+
+//console.log(removePunctuation(".hello"));
 
 module.exports = removePunctuation;

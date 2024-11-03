@@ -4,7 +4,7 @@ describe("count words", () => {
   test("It will return an empty string if the param is an empty string", () => {
     const str = "";
     const currentOutput = removePunctuation(str);
-    const targetOutput = '';
+    const targetOutput = "";
     expect(currentOutput).toEqual(targetOutput);
   });
 
@@ -14,5 +14,12 @@ describe("count words", () => {
     expect(() => {
       removePunctuation(str);
     }).toThrow(targetOutput);
+  });
+
+  test("It will removes dot if it exist in string ", () => {
+    const str = ".hello";
+    const currentOutput = removePunctuation(str);
+    const targetOutput = "hello";
+    expect(currentOutput).toEqual(targetOutput);
   });
 });
