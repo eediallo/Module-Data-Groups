@@ -5,7 +5,7 @@ function removePunctuation(str) {
     throw new Error("Param must be of type string");
   }
 
-  return str.replace(punctuations, "");
+  return str.trim().replace(punctuations, "");
 }
 
 //console.log(removePunctuation(".hello"));
