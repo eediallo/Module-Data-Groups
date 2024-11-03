@@ -21,4 +21,13 @@ describe("invert key value pairs", () => {
     const targetOutput = { 1: "a", 2: "b", 3: "c" };
     expect(currentOutput).toEqual(targetOutput);
   });
+
+  test("It will throw an error if param is not plain object", () => {
+    const obj = "hello";
+    const targetOutput =
+      "param is not valid data type. Invert must receive an object";
+    expect(() => {
+      invert(obj);
+    }).toThrow(targetOutput);
+  });
 });

@@ -31,8 +31,15 @@
 
 // e) Fix the implementation of invert (and write tests to prove it's fixed!)
 function invert(obj) {
-  const invertedObj = {};
+  const isObj = Object.prototype.toString.call(obj) === "[object Object]";
 
+  if (!isObj) {
+    throw new Error(
+      "param is not valid data type. Invert must receive an object"
+    );
+  }
+  
+  const invertedObj = {};
   for (const [key, value] of Object.entries(obj)) {
     invertedObj[value] = key;
   }
