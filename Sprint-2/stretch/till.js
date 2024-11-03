@@ -42,13 +42,16 @@ function totalTill(till) {
   }
 
   for (const [coin, quantity] of Object.entries(till)) {
+    const indexOfP = coin.indexOf("p");
+    const numericPartOfCoin = Number(coin.slice(0, indexOfP));
+    total += numericPartOfCoin * quantity;
   }
 
   return `£${total / 100}`;
 }
 
-const till = {};
-console.log(totalTill(till));
+// const till = { "200p": 2, "300p": 2 };
+// console.log(totalTill(till));
 //console.log(totalAmount);
 
 module.exports = totalTill;
