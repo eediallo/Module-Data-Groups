@@ -1,11 +1,11 @@
-const time = document.querySelector("#alarmSet").value;
-const totalTimeInSeconds = time;
-const totalMinutes = Math.floor(totalTimeInSeconds / 60);
-const remainingSeconds = totalTimeInSeconds % 60;
-
 function setAlarm() {
+  const time = document.querySelector("#alarmSet").value;
+  const totalTimeInSeconds = time;
+  console.log(totalTimeInSeconds);
+  const totalMinutes = Math.floor(totalTimeInSeconds / 60);
+  const remainingSeconds = totalTimeInSeconds % 60;
   const heading = document.querySelector("#timeRemaining");
-  heading.innerText = "Time Remaining: 00:19";
+  heading.innerText = `Time Remaining: ${totalMinutes}:${remainingSeconds}`;
 }
 
 // DO NOT EDIT BELOW HERE
