@@ -1,12 +1,11 @@
-const textArea = document.querySelector("textarea"); // acce
-const limitDisplay = document.querySelector('#character-limit-info')
+const commentInput = document.querySelector("#comment-input");
+const limitDisplay = document.querySelector("#character-limit-info");
 
-const textAreaValue = textArea.value;
+function updateCharacterLimit() {
+  const characterLimit = commentInput.maxLength;
+  const characterTyped = commentInput.value.length;
+  let remainingCharacters = characterLimit - characterTyped;
+  limitDisplay.innerText = `You have ${remainingCharacters} characters remaining`;
+}
 
-const characterLimit = textArea.maxLength;
-const characterTyped = textAreaValue.length;
-let remainingCharacters = characterLimit - characterTyped;
-
-textArea.addEventListener("keyup", () => {
-  console.log(textAreaValue);
-});
+commentInput.addEventListener("keyup", updateCharacterLimit);
