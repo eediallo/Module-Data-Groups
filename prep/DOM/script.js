@@ -3,7 +3,7 @@ console.log(textArea);
 
 const textAreaValue = textArea.value;
 
-const characterLimit = 200;
+const characterLimit = textArea.maxLength;
 const characterTyped = textAreaValue.length;
 let remainingCharacters = characterLimit - characterTyped;
 
