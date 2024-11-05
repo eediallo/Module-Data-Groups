@@ -1,4 +1,6 @@
-function setAlarm() {}
+function setAlarm() {
+  const time = document.querySelector("#alarmSet").value;
+}
 
 // DO NOT EDIT BELOW HERE
 
