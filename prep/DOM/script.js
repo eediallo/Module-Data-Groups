@@ -5,6 +5,7 @@ const textAreaValue = textArea.value;
 
 const characterLimit = 200;
 const characterTyped = textAreaValue.length;
+let remainingCharacters = characterLimit - characterTyped;
 
 textArea.addEventListener("keyup", () => {
   console.log(textAreaValue);
