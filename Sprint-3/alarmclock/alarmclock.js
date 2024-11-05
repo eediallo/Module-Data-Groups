@@ -4,7 +4,7 @@ function formatTimeUnit(unit) {
 
 function setAlarm() {
   const time = document.querySelector("#alarmSet").value;
-  const totalTimeInSeconds = time;
+  let totalTimeInSeconds = parseInt(time);
   const totalMinutes = Math.floor(totalTimeInSeconds / 60);
   const remainingSeconds = totalTimeInSeconds % 60;
   const heading = document.querySelector("#timeRemaining");
