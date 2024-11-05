@@ -7,11 +7,25 @@ function setAlarm() {
   let totalTimeInSeconds = parseInt(time);
   const initialMinutes = Math.floor(totalTimeInSeconds / 60);
   const initialSeconds = totalTimeInSeconds % 60;
-  const heading = document.querySelector("#timeRemaining");
+  let heading = document.querySelector("#timeRemaining");
   heading.innerText = `Time Remaining: ${formatTimeUnit(
     initialMinutes
   )}:${formatTimeUnit(initialSeconds)}`;
 
+  const setIntervalId = setInterval(() => {
+    totalTimeInSeconds--;
+
+    const totalMinutes = Math.floor(totalTimeInSeconds / 60);
+    const remainingSeconds = totalTimeInSeconds % 60;
+
+    heading.innerText = `Time Remaining: ${formatTimeUnit(
+      totalMinutes
+    )}:${formatTimeUnit(remainingSeconds)}`;
+
+    if (totalTimeInSeconds <= 0) {
+      clearInterval(setIntervalId);
+    }
+  }, 1000);
 }
 
 // DO NOT EDIT BELOW HERE
