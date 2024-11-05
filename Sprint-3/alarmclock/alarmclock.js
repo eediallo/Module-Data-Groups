@@ -1,3 +1,7 @@
+function formatTimeUnit(unit) {
+  return unit < 10 ? `0${unit}` : unit;
+}
+
 function setAlarm() {
   const time = document.querySelector("#alarmSet").value;
   const totalTimeInSeconds = time;
@@ -5,7 +9,9 @@ function setAlarm() {
   const totalMinutes = Math.floor(totalTimeInSeconds / 60);
   const remainingSeconds = totalTimeInSeconds % 60;
   const heading = document.querySelector("#timeRemaining");
-  heading.innerText = `Time Remaining: ${totalMinutes}:${remainingSeconds}`;
+  heading.innerText = `Time Remaining: ${formatTimeUnit(
+    totalMinutes
+  )}:${formatTimeUnit(remainingSeconds)}`;
 }
 
 // DO NOT EDIT BELOW HERE
