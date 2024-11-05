@@ -5,12 +5,13 @@ function formatTimeUnit(unit) {
 function setAlarm() {
   const time = document.querySelector("#alarmSet").value;
   let totalTimeInSeconds = parseInt(time);
-  const totalMinutes = Math.floor(totalTimeInSeconds / 60);
-  const remainingSeconds = totalTimeInSeconds % 60;
+  const initialMinutes = Math.floor(totalTimeInSeconds / 60);
+  const initialSeconds = totalTimeInSeconds % 60;
   const heading = document.querySelector("#timeRemaining");
   heading.innerText = `Time Remaining: ${formatTimeUnit(
-    totalMinutes
-  )}:${formatTimeUnit(remainingSeconds)}`;
+    initialMinutes
+  )}:${formatTimeUnit(initialSeconds)}`;
+
 }
 
 // DO NOT EDIT BELOW HERE
