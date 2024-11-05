@@ -1,5 +1,5 @@
 const textArea = document.querySelector("textarea"); // acce
-console.log(textArea);
+const limitDisplay = document.querySelector('#character-limit-info')
 
 const textAreaValue = textArea.value;
 
