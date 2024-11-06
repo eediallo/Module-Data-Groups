@@ -491,3 +491,8 @@ const quotes = [
 ];
 
 // call pickFromArray with the quotes array to check you get a random quote
+
+const quote = document.querySelector("#quote");
+const author = document.querySelector("#author");
+const newQuoteBtn = document.querySelector("#new-quote");
+
