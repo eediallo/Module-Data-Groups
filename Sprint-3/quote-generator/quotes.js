@@ -499,5 +499,13 @@ const newQuoteBtn = document.querySelector("#new-quote");
 const initialAuthor = "Albert Einstein";
 const initialQuote = "Strive not to be a success, but rather to be of value.";
 
-quote.textContent = initialQuote
+quote.textContent = initialQuote;
 author.textContent = initialAuthor;
+
+function changeToRandomQuote() {
+  const randomQuote = pickFromArray(quotes);
+  quote.textContent = randomQuote.quote;
+  author.textContent = randomQuote.author;
+}
+
+newQuoteBtn.addEventListener("click", changeToRandomQuote);
