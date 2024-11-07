@@ -26,10 +26,19 @@ const readingList = document.querySelector("#reading-list");
 function renderTitleAndAuthor(books) {
   for (let bookInfo of books) {
     const titleAuthorList = document.createElement("li");
-    titleAuthorList.classList.add('titleAuthorList')
+    titleAuthorList.classList.add("titleAuthorList");
+    console.log(titleAuthorList);
     titleAuthorList.textContent = `${bookInfo.title} by ${bookInfo.author}`;
     readingList.append(titleAuthorList);
+
+    renderImage(titleAuthorList, bookInfo);
   }
 }
 
 renderTitleAndAuthor(books);
+
+function renderImage(titleAuthorList, bookInfo) {
+  const imgEl = document.createElement("img");
+  imgEl.setAttribute("src", bookInfo.bookCoverImage);
+  titleAuthorList.append(imgEl);
+}
