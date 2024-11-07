@@ -21,10 +21,17 @@ function showImage(index) {
   carouselImg.setAttribute("src", images[index]);
 }
 
-
 forwardBtn.addEventListener("click", () => {
   currentImageIndex =
     currentImageIndex + 1 === images.length ? 0 : currentImageIndex + 1;
   showImage(currentImageIndex);
 });
 
+backwardBtn.addEventListener("click", () => {
+  if (currentImageIndex - 1 < 0) {
+    currentImageIndex = images.length - 1;
+  } else {
+    currentImageIndex--;
+  }
+  showImage(currentImageIndex);
+});
