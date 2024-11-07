@@ -14,3 +14,10 @@ const images = [
 const carouselImg = document.querySelector("#carousel-img");
 const forwardBtn = document.querySelector("#forward-btn");
 const backwardBtn = document.querySelector("#backward-btn");
+
+let currentImageIndex = 0;
+
+function showImage(index) {
+  carouselImg.setAttribute("src", images[index]);
+}
+
