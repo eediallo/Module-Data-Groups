@@ -32,6 +32,12 @@ function renderTitleAndAuthor(books) {
     readingList.append(titleAuthorList);
 
     renderImage(titleAuthorList, bookInfo);
+
+    if (bookInfo.alreadyRead) {
+      titleAuthorList.style.backgroundColor = "green";
+    } else {
+      titleAuthorList.style.backgroundColor = "red";
+    }
   }
 }
 
@@ -42,3 +48,4 @@ function renderImage(titleAuthorList, bookInfo) {
   imgEl.setAttribute("src", bookInfo.bookCoverImage);
   titleAuthorList.append(imgEl);
 }
+
