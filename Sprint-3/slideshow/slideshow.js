@@ -35,3 +35,7 @@ backwardBtn.addEventListener("click", () => {
   }
   showImage(currentImageIndex);
 });
+
+const autoBackwardBtn = document.querySelector("#auto-backward-btn");
+const stopBtn = document.querySelector("#stop-btn");
+const autoForwardBtn = document.querySelector("#auto-forward-btn")
