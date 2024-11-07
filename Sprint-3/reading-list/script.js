@@ -27,7 +27,6 @@ function renderTitleAndAuthor(books) {
   for (let bookInfo of books) {
     const titleAuthorList = document.createElement("li");
     titleAuthorList.classList.add("titleAuthorList");
-    console.log(titleAuthorList);
     titleAuthorList.textContent = `${bookInfo.title} by ${bookInfo.author}`;
     readingList.append(titleAuthorList);
 
