@@ -21,3 +21,10 @@ function showImage(index) {
   carouselImg.setAttribute("src", images[index]);
 }
 
+
+forwardBtn.addEventListener("click", () => {
+  currentImageIndex =
+    currentImageIndex + 1 === images.length ? 0 : currentImageIndex + 1;
+  showImage(currentImageIndex);
+});
+
