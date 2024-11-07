@@ -11,6 +11,6 @@ const images = [
 // 2. displays next img when forward button is clicked
 // 3. display previous image when backward button is clicked
 
-function nexImage() {
-
-}
+const carouselImg = document.querySelector("#carousel-img");
+const forwardBtn = document.querySelector("#forward-btn");
+const backwardBtn = document.querySelector("#backward-btn");
