@@ -496,10 +496,7 @@ const quote = document.querySelector("#quote");
 const author = document.querySelector("#author");
 const newQuoteBtn = document.querySelector("#new-quote");
 
-const initialQuote = {
-  quote: "Strive not to be a success, but rather to be of value.",
-  author: "Albert Einstein",
-};
+const initialQuote = pickFromArray(quotes);
 
 quote.textContent = initialQuote.quote;
 author.textContent = initialQuote.author;
