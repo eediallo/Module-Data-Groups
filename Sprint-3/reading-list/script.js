@@ -31,12 +31,7 @@ function renderTitleAndAuthor(books) {
     readingList.append(titleAuthorList);
 
     renderImage(titleAuthorList, bookInfo);
-
-    if (bookInfo.alreadyRead) {
-      titleAuthorList.style.backgroundColor = "green";
-    } else {
-      titleAuthorList.style.backgroundColor = "red";
-    }
+    changeBackgroundColor(bookInfo, titleAuthorList);
   });
 }
 
@@ -46,4 +41,10 @@ function renderImage(titleAuthorList, bookInfo) {
   const imgEl = document.createElement("img");
   imgEl.setAttribute("src", bookInfo.bookCoverImage);
   titleAuthorList.append(imgEl);
+}
+
+function changeBackgroundColor(bookInfo, titleAuthorList) {
+  return bookInfo.alreadyRead
+    ? (titleAuthorList.style.backgroundColor = "green")
+    : (titleAuthorList.style.backgroundColor = "red");
 }
