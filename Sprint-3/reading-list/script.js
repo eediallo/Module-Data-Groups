@@ -24,7 +24,7 @@ const books = [
 const readingList = document.querySelector("#reading-list");
 
 function renderTitleAndAuthor(books) {
-  for (let bookInfo of books) {
+  books.forEach((bookInfo) => {
     const titleAuthorList = document.createElement("li");
     titleAuthorList.classList.add("titleAuthorList");
     titleAuthorList.textContent = `${bookInfo.title} by ${bookInfo.author}`;
@@ -37,7 +37,7 @@ function renderTitleAndAuthor(books) {
     } else {
       titleAuthorList.style.backgroundColor = "red";
     }
-  }
+  });
 }
 
 renderTitleAndAuthor(books);
@@ -47,4 +47,3 @@ function renderImage(titleAuthorList, bookInfo) {
   imgEl.setAttribute("src", bookInfo.bookCoverImage);
   titleAuthorList.append(imgEl);
 }
-
