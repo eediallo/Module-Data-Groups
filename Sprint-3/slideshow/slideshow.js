@@ -61,4 +61,7 @@ autoBackwardBtn.addEventListener("click", () => {
   }, 5000);
 });
 
+stopBtn.addEventListener("click", () => {
+  clearInterval(autoPlayInterval);
+});
 
