@@ -496,6 +496,6 @@ console.log(pickFromArray(quotes));
 const quoteP = document.querySelector("#quote");
 const authorP = document.querySelector("#author");
 
-const initialQuote = pickFromArray(quotes);
-quoteP.textContent = initialQuote.quote;
-authorP.textContent = initialQuote.author;
+const initialRandomQuote = pickFromArray(quotes);
+quoteP.textContent = initialRandomQuote.quote;
+authorP.textContent = initialRandomQuote.author;
