@@ -4,6 +4,7 @@ function formatTimeUnit(unit) {
 
 const heading = document.querySelector("#timeRemaining");
 const stopBtn = document.querySelector("#stop");
+heading.innerText = "Time Remaining: 00:00";
 //===========setAlarm======================
 function setAlarm() {
   const totalTimeInSeconds = parseInt(
