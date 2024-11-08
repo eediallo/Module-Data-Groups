@@ -3,6 +3,7 @@ function formatTimeUnit(unit) {
 }
 
 const heading = document.querySelector("#timeRemaining");
+//===========setAlarm======================
 function setAlarm() {
   const totalTimeInSeconds = parseInt(
     document.querySelector("#alarmSet").value
@@ -11,6 +12,7 @@ function setAlarm() {
   countDownEverySeconds(totalTimeInSeconds, heading);
 }
 
+//=============setInitialMinutesAndSeconds=======================
 function setInitialMinutesAndSeconds(heading, totalTimeInSeconds) {
   const initialMinutes = Math.floor(totalTimeInSeconds / 60);
   const InitialSeconds = totalTimeInSeconds % 60;
@@ -20,6 +22,7 @@ function setInitialMinutesAndSeconds(heading, totalTimeInSeconds) {
   )}:${formatTimeUnit(InitialSeconds)}`;
 }
 
+//================countDownEverySeconds======================
 function countDownEverySeconds(totalTimeInSeconds, heading) {
   const setIntervalId = setInterval(() => {
     totalTimeInSeconds--;
@@ -33,6 +36,8 @@ function countDownEverySeconds(totalTimeInSeconds, heading) {
   }, 1000);
 }
 
+
+//=================playAudioWhenTimerReachesZero=========================
 function playAudioWhenTimerReachesZero(totalTimeInSeconds, setIntervalId) {
   if (totalTimeInSeconds < 0) {
     clearInterval(setIntervalId);
