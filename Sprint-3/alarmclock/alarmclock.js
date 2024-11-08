@@ -2,18 +2,22 @@ function formatTimeUnit(unit) {
   return unit < 10 ? `0${unit}` : unit;
 }
 
+const heading = document.querySelector("#timeRemaining");
 function setAlarm() {
-  const heading = document.querySelector("#timeRemaining");
-  const time = document.querySelector("#alarmSet").value;
-  let totalTimeInSeconds = parseInt(time);
+  const totalTimeInSeconds = parseInt(
+    document.querySelector("#alarmSet").value
+  );
+  setInitialMinutesAndSeconds(heading, totalTimeInSeconds);
+  countDownEverySeconds(totalTimeInSeconds, heading);
+}
+
+function setInitialMinutesAndSeconds(heading, totalTimeInSeconds) {
   const initialMinutes = Math.floor(totalTimeInSeconds / 60);
   const InitialSeconds = totalTimeInSeconds % 60;
 
   heading.innerText = `Time Remaining: ${formatTimeUnit(
     initialMinutes
   )}:${formatTimeUnit(InitialSeconds)}`;
-
-  countDownEverySeconds(totalTimeInSeconds, heading);
 }
 
 function countDownEverySeconds(totalTimeInSeconds, heading) {
