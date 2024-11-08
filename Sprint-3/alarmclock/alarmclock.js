@@ -23,6 +23,11 @@ function setAlarm() {
     if (totalTimeInSeconds <= 0) {
       clearInterval(setIntervalId);
     }
+
+    if (totalTimeInSeconds <= 0) {
+      clearInterval(setIntervalId);
+      playAlarm();
+    }
   }, 1000);
 }
 
