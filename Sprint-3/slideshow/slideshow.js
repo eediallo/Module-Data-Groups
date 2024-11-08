@@ -11,6 +11,7 @@ const images = [
 // 2. displays next img when forward button is clicked
 // 3. display previous image when backward button is clicked
 
+//===================Level 1=============================
 const carouselImg = document.querySelector("#carousel-img");
 const forwardBtn = document.querySelector("#forward-btn");
 const backwardBtn = document.querySelector("#backward-btn");
@@ -40,6 +41,7 @@ function moveImageBackwards() {
 
 backwardBtn.addEventListener("click", moveImageBackwards);
 
+//=====================Level 2======================================
 const autoBackwardBtn = document.querySelector("#auto-backward-btn");
 const stopBtn = document.querySelector("#stop-btn");
 const autoForwardBtn = document.querySelector("#auto-forward-btn");
