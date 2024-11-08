@@ -41,11 +41,17 @@ function countDownEverySeconds(totalTimeInSeconds, heading) {
 function playAudioWhenTimerReachesZero(totalTimeInSeconds, setIntervalId) {
   if (totalTimeInSeconds <= 0) {
     clearInterval(setIntervalId);
-    document.querySelector("body").style.backgroundColor = "red";
+    changeBackgroundColor();
     playAlarm();
   }
 }
 stopBtn.addEventListener("click", pauseAlarm);
+
+function changeBackgroundColor() {
+  const body = document.querySelector("body");
+  body.style.backgroundColor = "#444";
+  body.style.color = "white";
+}
 // DO NOT EDIT BELOW HERE
 
 var audio = new Audio("alarmsound.mp3");
