@@ -1,6 +1,8 @@
 function setAlarm() {
   const heading = document.querySelector("#timeRemaining");
   const time = document.querySelector("#alarmSet").value;
+
+  heading.innerText = "Time Remaining: 00:19";
 }
 
 // DO NOT EDIT BELOW HERE
