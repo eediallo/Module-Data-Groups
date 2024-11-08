@@ -45,6 +45,7 @@ function playAudioWhenTimerReachesZero(totalTimeInSeconds, setIntervalId) {
   }
 }
 
+stopBtn.addEventListener("click", pauseAlarm);
 // DO NOT EDIT BELOW HERE
 
 var audio = new Audio("alarmsound.mp3");
@@ -67,5 +68,4 @@ function pauseAlarm() {
   audio.pause();
 }
 
-stopBtn.addEventListener("click", pauseAlarm);
 window.onload = setup;
