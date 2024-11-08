@@ -5,7 +5,7 @@ function setAlarm() {
   const totalMinutes = Math.floor(totalTimeInSeconds / 60);
   const remainingSeconds = totalTimeInSeconds % 60;
 
-  heading.innerText = "Time Remaining: 00:19";
+  heading.innerText = `Time Remaining: ${totalMinutes}:${remainingSeconds}`;
 }
 
 // DO NOT EDIT BELOW HERE
