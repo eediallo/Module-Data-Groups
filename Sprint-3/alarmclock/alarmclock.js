@@ -3,6 +3,7 @@ function formatTimeUnit(unit) {
 }
 
 const heading = document.querySelector("#timeRemaining");
+const stopBtn = document.querySelector('#stop')
 //===========setAlarm======================
 function setAlarm() {
   const totalTimeInSeconds = parseInt(
@@ -65,5 +66,6 @@ function playAlarm() {
 function pauseAlarm() {
   audio.pause();
 }
+
 
 window.onload = setup;
