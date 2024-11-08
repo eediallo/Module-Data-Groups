@@ -13,6 +13,10 @@ function setAlarm() {
     initialMinutes
   )}:${formatTimeUnit(InitialSeconds)}`;
 
+  countDownEverySeconds(totalTimeInSeconds, heading);
+}
+
+function countDownEverySeconds(totalTimeInSeconds, heading) {
   const setIntervalId = setInterval(() => {
     totalTimeInSeconds--;
     const totalMinutes = Math.floor(totalTimeInSeconds / 60);
@@ -20,9 +24,6 @@ function setAlarm() {
     heading.innerText = `Time Remaining: ${formatTimeUnit(
       totalMinutes
     )}:${formatTimeUnit(remainingSeconds)}`;
-    if (totalTimeInSeconds <= 0) {
-      clearInterval(setIntervalId);
-    }
 
     if (totalTimeInSeconds <= 0) {
       clearInterval(setIntervalId);
