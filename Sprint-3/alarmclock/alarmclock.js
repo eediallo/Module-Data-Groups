@@ -25,11 +25,15 @@ function countDownEverySeconds(totalTimeInSeconds, heading) {
       totalMinutes
     )}:${formatTimeUnit(remainingSeconds)}`;
 
-    if (totalTimeInSeconds <= 0) {
-      clearInterval(setIntervalId);
-      playAlarm();
-    }
+    playAudioWhenTimerReachesZero(totalTimeInSeconds, setIntervalId);
   }, 1000);
+}
+
+function playAudioWhenTimerReachesZero(totalTimeInSeconds, setIntervalId) {
+  if (totalTimeInSeconds < 0) {
+    clearInterval(setIntervalId);
+    playAlarm();
+  }
 }
 
 // DO NOT EDIT BELOW HERE
