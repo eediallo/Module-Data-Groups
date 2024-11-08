@@ -48,6 +48,7 @@ function playAudioWhenTimerReachesZero(totalTimeInSeconds, setIntervalId) {
 }
 stopBtn.addEventListener("click", pauseAlarm);
 
+//===============changeBackgroundColor==============================
 function changeBackgroundColor() {
   const body = document.querySelector("body");
   body.style.backgroundColor = "#444";
