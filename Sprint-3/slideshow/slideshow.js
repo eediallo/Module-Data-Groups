@@ -50,11 +50,7 @@ let autoPlayInterval;
 
 autoForwardBtn.addEventListener("click", () => {
   clearInterval(autoPlayInterval);
-  autoPlayInterval = setInterval(() => {
-    currentImageIndex =
-      currentImageIndex + 1 === images.length ? 0 : currentImageIndex + 1;
-    showImage(currentImageIndex);
-  }, 5000);
+  autoPlayInterval = setInterval(moveImageForward, 5000);
 });
 
 autoBackwardBtn.addEventListener("click", () => {
