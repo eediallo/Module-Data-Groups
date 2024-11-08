@@ -41,10 +41,10 @@ function countDownEverySeconds(totalTimeInSeconds, heading) {
 function playAudioWhenTimerReachesZero(totalTimeInSeconds, setIntervalId) {
   if (totalTimeInSeconds <= 0) {
     clearInterval(setIntervalId);
+    document.querySelector("body").style.backgroundColor = "red";
     playAlarm();
   }
 }
-
 stopBtn.addEventListener("click", pauseAlarm);
 // DO NOT EDIT BELOW HERE
 
