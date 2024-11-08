@@ -38,4 +38,15 @@ backwardBtn.addEventListener("click", () => {
 
 const autoBackwardBtn = document.querySelector("#auto-backward-btn");
 const stopBtn = document.querySelector("#stop-btn");
-const autoForwardBtn = document.querySelector("#auto-forward-btn")
+const autoForwardBtn = document.querySelector("#auto-forward-btn");
+
+let autoPlayInterval;
+
+autoForwardBtn.addEventListener("click", () => {
+  clearInterval(autoPlayInterval);
+  autoPlayInterval = setInterval(() => {
+    currentImageIndex =
+      currentImageIndex + 1 === images.length ? 0 : currentImageIndex + 1;
+    showImage(currentImageIndex);
+  }, 5000);
+});
