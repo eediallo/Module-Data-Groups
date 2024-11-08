@@ -50,3 +50,15 @@ autoForwardBtn.addEventListener("click", () => {
     showImage(currentImageIndex);
   }, 5000);
 });
+
+
+autoBackwardBtn.addEventListener("click", () => {
+  clearInterval(autoPlayInterval);
+  autoPlayInterval = setInterval(() => {
+    currentImageIndex =
+      currentImageIndex - 1 < 0 ? images.length - 1 : currentImageIndex - 1;
+    showImage(currentImageIndex);
+  }, 5000);
+});
+
+
