@@ -38,7 +38,7 @@ function countDownEverySeconds(totalTimeInSeconds, heading) {
 
 //=================playAudioWhenTimerReachesZero=========================
 function playAudioWhenTimerReachesZero(totalTimeInSeconds, setIntervalId) {
-  if (totalTimeInSeconds < 0) {
+  if (totalTimeInSeconds <= 0) {
     clearInterval(setIntervalId);
     playAlarm();
   }
