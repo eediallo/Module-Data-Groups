@@ -42,16 +42,22 @@ const autoForwardBtn = document.querySelector("#auto-forward-btn");
 
 let autoPlayInterval;
 
-autoForwardBtn.addEventListener("click", () => {
-  clearInterval(autoPlayInterval);
-  autoPlayInterval = setInterval(moveImageForward, 5000);
-});
+if (autoForwardBtn) {
+  autoForwardBtn.addEventListener("click", () => {
+    clearInterval(autoPlayInterval);
+    autoPlayInterval = setInterval(moveImageForward, 2000);
+  });
+}
 
-autoBackwardBtn.addEventListener("click", () => {
-  clearInterval(autoPlayInterval);
-  autoPlayInterval = setInterval(moveImageBackwards, 5000);
-});
+if (autoBackwardBtn) {
+  autoBackwardBtn.addEventListener("click", () => {
+    clearInterval(autoPlayInterval);
+    autoPlayInterval = setInterval(moveImageBackwards, 2000);
+  });
+}
 
-stopBtn.addEventListener("click", () => {
-  clearInterval(autoPlayInterval);
-});
+if (stopBtn) {
+  stopBtn.addEventListener("click", () => {
+    clearInterval(autoPlayInterval);
+  });
+}
