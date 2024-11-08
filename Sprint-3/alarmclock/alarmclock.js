@@ -36,7 +36,6 @@ function countDownEverySeconds(totalTimeInSeconds, heading) {
   }, 1000);
 }
 
-
 //=================playAudioWhenTimerReachesZero=========================
 function playAudioWhenTimerReachesZero(totalTimeInSeconds, setIntervalId) {
   if (totalTimeInSeconds < 0) {
