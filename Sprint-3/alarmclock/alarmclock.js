@@ -2,10 +2,10 @@ function setAlarm() {
   const heading = document.querySelector("#timeRemaining");
   const time = document.querySelector("#alarmSet").value;
   let totalTimeInSeconds = parseInt(time);
-  const totalMinutes = Math.floor(totalTimeInSeconds / 60);
-  const remainingSeconds = totalTimeInSeconds % 60;
+  const initialMinutes = Math.floor(totalTimeInSeconds / 60);
+  const InitialSeconds = totalTimeInSeconds % 60;
 
-  heading.innerText = `Time Remaining: ${totalMinutes}:${remainingSeconds}`;
+  heading.innerText = `Time Remaining: ${initialMinutes}:${InitialSeconds}`;
 }
 
 // DO NOT EDIT BELOW HERE
