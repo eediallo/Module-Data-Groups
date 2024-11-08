@@ -506,3 +506,5 @@ function generateNewRandomQuote() {
   quoteP.textContent = newRandomQuote.quote;
   authorP.textContent = newRandomQuote.author;
 }
+
+newQuoteBtn.addEventListener("click", generateNewRandomQuote);
