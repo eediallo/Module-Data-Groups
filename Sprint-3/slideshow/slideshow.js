@@ -29,14 +29,16 @@ function moveImageForward() {
 
 forwardBtn.addEventListener("click", moveImageForward);
 
-backwardBtn.addEventListener("click", () => {
+function moveImageBackwards() {
   if (currentImageIndex - 1 < 0) {
     currentImageIndex = images.length - 1;
   } else {
     currentImageIndex--;
   }
   showImage(currentImageIndex);
-});
+}
+
+backwardBtn.addEventListener("click", moveImageBackwards);
 
 const autoBackwardBtn = document.querySelector("#auto-backward-btn");
 const stopBtn = document.querySelector("#stop-btn");
