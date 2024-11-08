@@ -46,6 +46,8 @@ function playAudioWhenTimerReachesZero(totalTimeInSeconds, setIntervalId) {
     playAlarm();
   }
 }
+
+// event to pause alarm
 stopBtn.addEventListener("click", pauseAlarm);
 
 //===============changeBackgroundColor==============================
