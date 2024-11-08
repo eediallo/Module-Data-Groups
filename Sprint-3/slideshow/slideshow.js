@@ -21,11 +21,13 @@ function showImage(index) {
   carouselImg.setAttribute("src", images[index]);
 }
 
-forwardBtn.addEventListener("click", () => {
+function moveImageForward() {
   currentImageIndex =
     currentImageIndex + 1 === images.length ? 0 : currentImageIndex + 1;
   showImage(currentImageIndex);
-});
+}
+
+forwardBtn.addEventListener("click", moveImageForward);
 
 backwardBtn.addEventListener("click", () => {
   if (currentImageIndex - 1 < 0) {
@@ -51,7 +53,6 @@ autoForwardBtn.addEventListener("click", () => {
   }, 5000);
 });
 
-
 autoBackwardBtn.addEventListener("click", () => {
   clearInterval(autoPlayInterval);
   autoPlayInterval = setInterval(() => {
@@ -64,4 +65,3 @@ autoBackwardBtn.addEventListener("click", () => {
 stopBtn.addEventListener("click", () => {
   clearInterval(autoPlayInterval);
 });
-
