@@ -35,3 +35,9 @@ body {
 footer p{
     text-align: center;
 }
+
+@media screen and (max-width: 768px){
+    .quote-section {
+        width: 100%;
+    }
+}
