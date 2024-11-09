@@ -22,3 +22,10 @@ const books = [
 ];
 
 const readingList = document.querySelector("#reading-list");
+
+for (let bookInfo of books) {
+  const list = document.createElement("li");
+  list.classList.add("item");
+  list.textContent = `${bookInfo.title} by ${bookInfo.author}`;
+  readingList.append(list);
+}
