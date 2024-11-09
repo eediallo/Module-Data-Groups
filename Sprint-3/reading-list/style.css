@@ -1,3 +1,8 @@
+#content {
+  width: 500px;
+  margin: 0 auto;
+}
+
 .item {
   margin-top: 10px;
   width: 500px;
