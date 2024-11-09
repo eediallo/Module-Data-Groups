@@ -32,4 +32,10 @@ for (let bookInfo of books) {
   const img = document.createElement("img");
   img.setAttribute("src", bookInfo.bookCoverImage);
   list.append(img);
+
+  if (bookInfo.alreadyRead) {
+    list.style.backgroundColor = "green";
+  } else {
+    list.style.backgroundColor = "red";
+  }
 }
