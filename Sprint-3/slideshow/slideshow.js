@@ -4,7 +4,6 @@ const images = [
   "./assets/cute-cat-c.jpg",
 ];
 
-
 //===================Level 1=============================
 const carouselImg = document.querySelector("#carousel-img");
 const forwardBtn = document.querySelector("#forward-btn");
@@ -42,12 +41,16 @@ const autoForwardBtn = document.querySelector("#auto-forward");
 
 let autoPlayInterval;
 
+function toggleDisabledButtons(disabled) {
+  autoBackwardBtn.disabled = disabled;
+  autoForwardBtn.disabled = disabled;
+}
+
 if (autoForwardBtn) {
   autoForwardBtn.addEventListener("click", () => {
     clearInterval(autoPlayInterval);
     autoPlayInterval = setInterval(moveImageForward, 2000);
-    autoForwardBtn.disabled = true;
-    autoBackwardBtn.disabled = true;
+    toggleDisabledButtons(true);
   });
 }
 
@@ -55,15 +58,13 @@ if (autoBackwardBtn) {
   autoBackwardBtn.addEventListener("click", () => {
     clearInterval(autoPlayInterval);
     autoPlayInterval = setInterval(moveImageBackwards, 2000);
-    autoBackwardBtn.disabled = true;
-    autoForwardBtn.disabled = true;
+    toggleDisabledButtons(true);
   });
 }
 
 if (stopBtn) {
   stopBtn.addEventListener("click", () => {
-    autoBackwardBtn.disabled = false;
-    autoForwardBtn.disabled = false;
+    toggleDisabledButtons(false);
     clearInterval(autoPlayInterval);
   });
 }
