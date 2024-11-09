@@ -29,6 +29,6 @@ for (let bookInfo of books) {
   list.textContent = `${bookInfo.title} by ${bookInfo.author}`;
   readingList.append(list);
 
-  const img = document.createElement('img')
-
+  const img = document.createElement("img");
+  img.setAttribute("src", bookInfo.bookCoverImage);
 }
