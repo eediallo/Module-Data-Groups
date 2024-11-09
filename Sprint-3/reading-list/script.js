@@ -31,4 +31,5 @@ for (let bookInfo of books) {
 
   const img = document.createElement("img");
   img.setAttribute("src", bookInfo.bookCoverImage);
+  list.append(img);
 }
