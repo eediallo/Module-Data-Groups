@@ -21,3 +21,4 @@ const books = [
   },
 ];
 
+const readingList = document.querySelector("#reading-list");
