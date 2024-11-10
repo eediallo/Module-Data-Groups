@@ -16,3 +16,15 @@ forwardBtn.addEventListener("click", () => {
     carouselImgIndex + 1 === images.length ? 0 : carouselImgIndex + 1;
   carouselImg.setAttribute("src", images[carouselImgIndex]);
 });
+
+backBackwardBtn.addEventListener("click", () => {
+  if (carouselImgIndex === 0) {
+    carouselImgIndex = images.length - 1;
+    console.log(carouselImgIndex);
+  } else {
+    carouselImgIndex = carouselImgIndex - 1;
+    console.log(carouselImgIndex);
+  }
+
+  carouselImg.setAttribute("src", images[carouselImgIndex]);
+});
