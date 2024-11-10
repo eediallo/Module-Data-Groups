@@ -5,6 +5,8 @@ const images = [
 ];
 
 // Write your code here
+
+//===========  Level 1 challenge===========================
 const forwardBtn = document.querySelector("#forward-btn");
 const backBackwardBtn = document.querySelector("#backward-btn");
 const carouselImg = document.querySelector("#carousel-img");
@@ -31,3 +33,5 @@ function moveImageBackward() {
 forwardBtn.addEventListener("click", moveImageForward);
 
 backBackwardBtn.addEventListener("click", moveImageBackward);
+
+//====================Level 2 challenge==================
