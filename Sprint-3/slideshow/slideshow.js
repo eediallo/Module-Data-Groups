@@ -43,12 +43,16 @@ let intervalId;
 
 autoForwardBtn.addEventListener("click", () => {
   intervalId = setInterval(() => {
+    autoForwardBtn.disabled = true;
+    autoBackwardBtn.disabled = true;
     moveImageForward();
   }, 2000);
 });
 
 autoBackwardBtn.addEventListener("click", () => {
   intervalId = setInterval(() => {
+    autoForwardBtn.disabled = true;
+    autoBackwardBtn.disabled = true;
     moveImageBackward();
   }, 2000);
 });
