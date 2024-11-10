@@ -35,6 +35,14 @@ forwardBtn.addEventListener("click", moveImageForward);
 backBackwardBtn.addEventListener("click", moveImageBackward);
 
 //====================Level 2 challenge==================
-const autoForwardBtn = document.querySelector('#auto-forward')
-const autoBackwardBtn = document.querySelector('#auto-backward')
-const stopBtn = document.querySelector('#stop')
+const autoForwardBtn = document.querySelector("#auto-forward");
+const autoBackwardBtn = document.querySelector("#auto-backward");
+const stopBtn = document.querySelector("#stop");
+
+let intervalId;
+
+autoForwardBtn.addEventListener("click", () => {
+  intervalId = setInterval(() => {
+    moveImageForward();
+  }, 2000);
+});
