@@ -11,20 +11,20 @@ const carouselImg = document.querySelector("#carousel-img");
 
 let currentImageIndex = 0;
 
+const showImage = (index) => carouselImg.setAttribute("src", images[index]);
+
 forwardBtn.addEventListener("click", () => {
   currentImageIndex =
     currentImageIndex + 1 === images.length ? 0 : currentImageIndex + 1;
-  carouselImg.setAttribute("src", images[currentImageIndex]);
+  showImage(currentImageIndex);
 });
 
 backBackwardBtn.addEventListener("click", () => {
   if (currentImageIndex === 0) {
     currentImageIndex = images.length - 1;
-    console.log(currentImageIndex);
   } else {
     currentImageIndex = currentImageIndex - 1;
-    console.log(currentImageIndex);
   }
 
-  carouselImg.setAttribute("src", images[currentImageIndex]);
+  showImage(currentImageIndex);
 });
