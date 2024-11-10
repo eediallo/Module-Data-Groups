@@ -13,11 +13,13 @@ let currentImageIndex = 0;
 
 const showImage = (index) => carouselImg.setAttribute("src", images[index]);
 
-forwardBtn.addEventListener("click", () => {
+function moveImageForward() {
   currentImageIndex =
     currentImageIndex + 1 === images.length ? 0 : currentImageIndex + 1;
   showImage(currentImageIndex);
-});
+}
+
+forwardBtn.addEventListener("click", moveImageForward);
 
 backBackwardBtn.addEventListener("click", () => {
   if (currentImageIndex === 0) {
