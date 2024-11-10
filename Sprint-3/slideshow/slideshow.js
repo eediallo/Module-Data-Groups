@@ -8,7 +8,7 @@ const images = [
 
 //===========  Level 1 challenge===========================
 const forwardBtn = document.querySelector("#forward-btn");
-const backBackwardBtn = document.querySelector("#backward-btn");
+const backwardBtn = document.querySelector("#backward-btn");
 const carouselImg = document.querySelector("#carousel-img");
 
 let currentImageIndex = 0;
@@ -32,7 +32,7 @@ function moveImageBackward() {
 
 forwardBtn.addEventListener("click", moveImageForward);
 
-backBackwardBtn.addEventListener("click", moveImageBackward);
+backwardBtn.addEventListener("click", moveImageBackward);
 
 //====================Level 2 challenge==================
 const autoForwardBtn = document.querySelector("#auto-forward");
@@ -66,6 +66,11 @@ stopBtn.addEventListener("click", () => {
 });
 
 forwardBtn.addEventListener("click", () => {
+  setButtonsDisabledState(false);
+  clearInterval(intervalId);
+});
+
+backwardBtn.addEventListener("click", () => {
   setButtonsDisabledState(false);
   clearInterval(intervalId);
 });
