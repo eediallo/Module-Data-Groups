@@ -64,3 +64,8 @@ stopBtn.addEventListener("click", () => {
   setButtonsDisabledState(false);
   clearInterval(intervalId);
 });
+
+forwardBtn.addEventListener("click", () => {
+  setButtonsDisabledState(false);
+  clearInterval(intervalId);
+});
