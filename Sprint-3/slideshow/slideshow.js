@@ -41,24 +41,26 @@ const stopBtn = document.querySelector("#stop");
 
 let intervalId;
 
+function setButtonsDisabledState(isDisabled) {
+  autoForwardBtn.disabled = isDisabled;
+  autoBackwardBtn.disabled = isDisabled;
+}
+
 autoForwardBtn.addEventListener("click", () => {
   intervalId = setInterval(() => {
-    autoForwardBtn.disabled = true;
-    autoBackwardBtn.disabled = true;
+    setButtonsDisabledState(true);
     moveImageForward();
   }, 2000);
 });
 
 autoBackwardBtn.addEventListener("click", () => {
   intervalId = setInterval(() => {
-    autoForwardBtn.disabled = true;
-    autoBackwardBtn.disabled = true;
+    setButtonsDisabledState(true);
     moveImageBackward();
   }, 2000);
 });
 
 stopBtn.addEventListener("click", () => {
-  autoForwardBtn.disabled = false;
-  autoBackwardBtn.disabled = false;
+  setButtonsDisabledState(false);
   clearInterval(intervalId);
 });
