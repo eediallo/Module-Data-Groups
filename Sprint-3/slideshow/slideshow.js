@@ -47,15 +47,15 @@ function setButtonsDisabledState(isDisabled) {
 }
 
 autoForwardBtn.addEventListener("click", () => {
+  setButtonsDisabledState(true);
   intervalId = setInterval(() => {
-    setButtonsDisabledState(true);
     moveImageForward();
   }, 2000);
 });
 
 autoBackwardBtn.addEventListener("click", () => {
+  setButtonsDisabledState(true);
   intervalId = setInterval(() => {
-    setButtonsDisabledState(true);
     moveImageBackward();
   }, 2000);
 });
