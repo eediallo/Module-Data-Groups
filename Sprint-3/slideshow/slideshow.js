@@ -19,9 +19,7 @@ function moveImageForward() {
   showImage(currentImageIndex);
 }
 
-forwardBtn.addEventListener("click", moveImageForward);
-
-backBackwardBtn.addEventListener("click", () => {
+function moveImageBackward() {
   if (currentImageIndex === 0) {
     currentImageIndex = images.length - 1;
   } else {
@@ -29,4 +27,8 @@ backBackwardBtn.addEventListener("click", () => {
   }
 
   showImage(currentImageIndex);
-});
+}
+
+forwardBtn.addEventListener("click", moveImageForward);
+
+backBackwardBtn.addEventListener("click", moveImageBackward);
