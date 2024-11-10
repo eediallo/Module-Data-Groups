@@ -58,5 +58,7 @@ autoBackwardBtn.addEventListener("click", () => {
 });
 
 stopBtn.addEventListener("click", () => {
+  autoForwardBtn.disabled = false;
+  autoBackwardBtn.disabled = false;
   clearInterval(intervalId);
 });
