@@ -7,4 +7,4 @@ const images = [
 // Write your code here
 const forwardBtn = document.querySelector("#forward-btn");
 const backBackwardBtn = document.querySelector("#backward-btn");
-
+const carouselImg = document.querySelector('#carousel-img')
