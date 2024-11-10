@@ -9,22 +9,22 @@ const forwardBtn = document.querySelector("#forward-btn");
 const backBackwardBtn = document.querySelector("#backward-btn");
 const carouselImg = document.querySelector("#carousel-img");
 
-let carouselImgIndex = 0;
+let currentImageIndex = 0;
 
 forwardBtn.addEventListener("click", () => {
-  carouselImgIndex =
-    carouselImgIndex + 1 === images.length ? 0 : carouselImgIndex + 1;
-  carouselImg.setAttribute("src", images[carouselImgIndex]);
+  currentImageIndex =
+    currentImageIndex + 1 === images.length ? 0 : currentImageIndex + 1;
+  carouselImg.setAttribute("src", images[currentImageIndex]);
 });
 
 backBackwardBtn.addEventListener("click", () => {
-  if (carouselImgIndex === 0) {
-    carouselImgIndex = images.length - 1;
-    console.log(carouselImgIndex);
+  if (currentImageIndex === 0) {
+    currentImageIndex = images.length - 1;
+    console.log(currentImageIndex);
   } else {
-    carouselImgIndex = carouselImgIndex - 1;
-    console.log(carouselImgIndex);
+    currentImageIndex = currentImageIndex - 1;
+    console.log(currentImageIndex);
   }
 
-  carouselImg.setAttribute("src", images[carouselImgIndex]);
+  carouselImg.setAttribute("src", images[currentImageIndex]);
 });
