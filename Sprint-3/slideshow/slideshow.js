@@ -11,6 +11,8 @@ const carouselImg = document.querySelector("#carousel-img");
 
 let carouselImgIndex = 0;
 
-function showImage(index) {
-  carouselImg.setAttribute("src", images[index]);
-}
+forwardBtn.addEventListener("click", () => {
+  carouselImgIndex =
+    carouselImgIndex + 1 === images.length ? 0 : carouselImgIndex + 1;
+  carouselImg.setAttribute("src", images[carouselImgIndex]);
+});
