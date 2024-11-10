@@ -25,7 +25,6 @@ function moveImageBackward() {
   } else {
     currentImageIndex = currentImageIndex - 1;
   }
-
   showImage(currentImageIndex);
 }
 
