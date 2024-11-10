@@ -46,3 +46,9 @@ autoForwardBtn.addEventListener("click", () => {
     moveImageForward();
   }, 2000);
 });
+
+autoBackwardBtn.addEventListener("click", () => {
+  intervalId = setInterval(() => {
+    moveImageBackward();
+  }, 2000);
+});
