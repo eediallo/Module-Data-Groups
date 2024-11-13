@@ -8,12 +8,24 @@ function populateTodoList(todos) {
   // 3. set the text content to the task
   // 4. append the li to the list
 
-  todos.forEach(obj =>{
-    const li = document.createElement('li')
-    li.textContent =  obj.task
+  // tick icon
+  // 1. loop through the li
+  // 2. create an icon
+  // 2.
 
-    list.appendChild(li)
-  })
+  todos.forEach((obj, index) => {
+    const li = document.createElement("li");
+    li.textContent = obj.task;
+
+    list.appendChild(li);
+
+    const tickIcon = document.createElement("i");
+    const binIcon = document.createElement("i");
+    tickIcon.classList.add("fa-check");
+    binIcon.classList.add("fa-trash");
+    li.appendChild(tickIcon)
+    li.appendChild(binIcon)
+  });
 }
 
 // These are the same todos that currently display in the HTML
