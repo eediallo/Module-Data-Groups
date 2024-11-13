@@ -11,6 +11,8 @@ function populateTodoList(todos) {
   // tick icon
   // 1. loop through the li
   // 2. create an icon
+
+  list.innerHTML = "";
   todos.forEach((obj, index) => {
     const li = document.createElement("li");
     li.textContent = obj.task;
