@@ -11,8 +11,6 @@ function populateTodoList(todos) {
   // tick icon
   // 1. loop through the li
   // 2. create an icon
-  // 2.
-
   todos.forEach((obj, index) => {
     const li = document.createElement("li");
     li.textContent = obj.task;
@@ -23,8 +21,8 @@ function populateTodoList(todos) {
     const binIcon = document.createElement("i");
     tickIcon.classList.add("fa-check");
     binIcon.classList.add("fa-trash");
-    li.appendChild(tickIcon)
-    li.appendChild(binIcon)
+    li.appendChild(tickIcon);
+    li.appendChild(binIcon);
   });
 }
 
