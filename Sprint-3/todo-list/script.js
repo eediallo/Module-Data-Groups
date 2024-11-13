@@ -10,7 +10,7 @@ function populateTodoList(todos) {
 
   todos.forEach(obj =>{
     const li = document.createElement('li')
-    li.textContent =  `${obj.task}`
+    li.textContent =  obj.task
 
     list.appendChild(li)
   })
