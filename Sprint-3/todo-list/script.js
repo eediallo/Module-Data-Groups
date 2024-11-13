@@ -42,8 +42,8 @@ function addNewTodo(event) {
   // The code below prevents the page from refreshing when we click the 'Add Todo' button.
   event.preventDefault();
   // Write your code here... and remember to reset the input field to be blank after creating a todo!
-  const inputField = event.target.querySelector("#todoInput").value;
-  const newTaskObj = { task: inputField, completed: false };
+  const inputFieldValue = event.target.querySelector("#todoInput").value;
+  const newTaskObj = { task: inputFieldValue, completed: false };
   todos.push(newTaskObj);
   populateTodoList(todos);
 }
