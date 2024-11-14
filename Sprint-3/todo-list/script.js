@@ -41,14 +41,19 @@ populateTodoList(todos);
 function addNewTodo(event) {
   // The code below prevents the page from refreshing when we click the 'Add Todo' button.
   event.preventDefault();
+  console.log(event);
   // Write your code here... and remember to reset the input field to be blank after creating a todo!
-  let inputField = event.target.querySelector("#todoInput");
+  let inputField = document.querySelector("#todoInput");
   let inputFieldValue = inputField.value;
-  const newTaskObj = { task: inputFieldValue, completed: false };
-  todos.push(newTaskObj);
-  populateTodoList(todos);
-  inputField.value = ""; 
+  console.log(inputFieldValue);
+  const newTodo = { task: inputFieldValue, completed: false };
+  todos.push(newTodo);
+  inputField.value = "";
 }
+const addBtn = document.querySelector("#btn");
+addBtn.addEventListener("click", (event) => {
+  addNewTodo(event);
+});
 
 // Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
 function deleteAllCompletedTodos() {
