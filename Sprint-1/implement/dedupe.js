@@ -1,12 +1,11 @@
 function dedupe(arr) {
-  let unique = [];
+  const unique = [];
   for (let item of arr) {
     if (!unique.includes(item)) {
       unique.push(item);
     }
   }
-  return unique
+  return unique;
 }
-
 
 module.exports = dedupe;
