@@ -20,15 +20,17 @@ function populateTodoList(todos) {
       li.style.textDecoration = todo.completed ? "line-through" : "none";
     });
 
-    binIcon.addEventListener("click", () => {
-      const todoIndex = todos.indexOf(todo);
-      // check if todo exists and delete it from the todos
-      if (todoIndex > -1) {
-        todos.splice(todoIndex, 1);
-        populateTodoList(todos);
-      }
-    });
+    binIcon.addEventListener("click", deleteAllCompletedTodos);
   });
+}
+
+function deleteTodoFromList(todo) {
+  const todoIndex = todos.indexOf(todo);
+  // check if todo exists and delete it from the todos
+  if (todoIndex > -1) {
+    todos.splice(todoIndex, 1);
+    populateTodoList(todos);
+  }
 }
 
 let todos = [
