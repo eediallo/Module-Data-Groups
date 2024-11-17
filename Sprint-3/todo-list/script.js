@@ -8,8 +8,10 @@ function populateTodoList(todos) {
 
     const tickIcon = document.createElement("i");
     const binIcon = document.createElement("i");
-    tickIcon.classList.add("fa-check");
-    binIcon.classList.add("fa-trash");
+
+    tickIcon.classList.add("fa", "fa-check", "icon");
+    binIcon.classList.add("fa", "fa-trash", "icon");
+
     li.appendChild(tickIcon);
     li.appendChild(binIcon);
 
