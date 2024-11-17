@@ -19,6 +19,14 @@ function populateTodoList(todos) {
       todo.completed = !todo.completed;
       li.style.textDecoration = todo.completed ? "line-through" : "none";
     });
+
+    binIcon.addEventListener("click", () => {
+      const todoIndex = todos.indexOf(todo);
+      if (todoIndex > -1) {
+        todos.splice(todoIndex, 1);
+        populateTodoList(todos);
+      }
+    });
   });
 }
 
