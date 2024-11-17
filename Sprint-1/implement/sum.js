@@ -1,6 +1,6 @@
 const isEmpty = require("./isEmpty.js");
 
-function isFloat(n) {
+function isOdd(n) {
   return !isNaN(n) && n % 2 !== 0;
 }
 
@@ -10,7 +10,7 @@ function sum(elements) {
     return 0;
   }
   for (let num of elements) {
-    isFloat(num)
+    isOdd(num)
       ? (sum += parseFloat(num.toFixed(2)))
       : !isNaN(num) && (sum += num);
   }
