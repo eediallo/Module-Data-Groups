@@ -1,6 +1,6 @@
 function populateTodoList(todos) {
   let list = document.getElementById("todo-list");
-  list.innerHTML = ""; // remove list content
+  list.innerHTML = ""; // resets content
   todos.forEach((todo, _) => {
     const li = document.createElement("li");
     li.textContent = todo.task;
@@ -22,6 +22,7 @@ function populateTodoList(todos) {
 
     binIcon.addEventListener("click", () => {
       const todoIndex = todos.indexOf(todo);
+      // check if todo exists and delete it from the todos
       if (todoIndex > -1) {
         todos.splice(todoIndex, 1);
         populateTodoList(todos);
@@ -30,17 +31,15 @@ function populateTodoList(todos) {
   });
 }
 
-// These are the same todos that currently display in the HTML
-// You will want to remove the ones in the current HTML after you have created them using JavaScript
-
 let todos = [
   { task: "Wash the dishes", completed: false },
   { task: "Do the shopping", completed: false },
 ];
 
+// displays initial todos list
 populateTodoList(todos);
 
-// This function will take the value of the input field and add it as a new todo to the bottom of the todo list. These new todos will need the completed and delete buttons adding like normal.
+// add a new todo to the lsit
 function addNewTodo(event) {
   event.preventDefault();
   const inputField = event.target.querySelector("#todoInput");
@@ -53,7 +52,6 @@ function addNewTodo(event) {
   }
 }
 
-// Advanced challenge: Write a function that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
 function deleteAllCompletedTodos() {
   todos = todos.filter((todo) => !todo.completed);
   populateTodoList(todos);
