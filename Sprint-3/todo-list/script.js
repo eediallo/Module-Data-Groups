@@ -1,9 +1,9 @@
 function populateTodoList(todos) {
   let list = document.getElementById("todo-list");
-  list.innerHTML = "";// remove list content
-  todos.forEach((obj, _) => {
+  list.innerHTML = ""; // remove list content
+  todos.forEach((todo, _) => {
     const li = document.createElement("li");
-    li.textContent = obj.task;
+    li.textContent = todo.task;
     list.appendChild(li);
 
     const tickIcon = document.createElement("i");
@@ -12,6 +12,12 @@ function populateTodoList(todos) {
     binIcon.classList.add("fa-trash");
     li.appendChild(tickIcon);
     li.appendChild(binIcon);
+
+    if (!todo.completed) {
+      li.style.textDecoration = "line-through";
+    } else {
+      li.style.textDecoration = "none";
+    }
   });
 }
 
