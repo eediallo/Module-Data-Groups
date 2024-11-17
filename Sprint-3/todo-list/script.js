@@ -13,11 +13,10 @@ function populateTodoList(todos) {
     li.appendChild(tickIcon);
     li.appendChild(binIcon);
 
-    if (!todo.completed) {
-      li.style.textDecoration = "line-through";
-    } else {
-      li.style.textDecoration = "none";
-    }
+    tickIcon.addEventListener("click", () => {
+      todo.completed = !todo.completed;
+      li.style.textDecoration = todo.completed ? "line-through" : "none";
+    });
   });
 }
 
