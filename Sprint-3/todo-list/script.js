@@ -20,10 +20,13 @@ function populateTodoList(todos) {
       li.style.textDecoration = todo.completed ? "line-through" : "none";
     });
 
-    binIcon.addEventListener("click", deleteAllCompletedTodos);
+    binIcon.addEventListener("click", () => {
+      deleteTodoFromList(todo);
+    });
   });
 }
 
+//======deleteTodoFromList=======================
 function deleteTodoFromList(todo) {
   const todoIndex = todos.indexOf(todo);
   // check if todo exists and delete it from the todos
@@ -33,6 +36,7 @@ function deleteTodoFromList(todo) {
   }
 }
 
+//---------------------------------------------------
 let todos = [
   { task: "Wash the dishes", completed: false },
   { task: "Do the shopping", completed: false },
@@ -41,7 +45,7 @@ let todos = [
 // displays initial todos list
 populateTodoList(todos);
 
-// add a new todo to the lsit
+//=====add a new todo to the list============================
 function addNewTodo(event) {
   event.preventDefault();
   const inputField = event.target.querySelector("#todoInput");
@@ -54,10 +58,13 @@ function addNewTodo(event) {
   }
 }
 
+
+//===========================================================
 function deleteAllCompletedTodos() {
   todos = todos.filter((todo) => !todo.completed);
   populateTodoList(todos);
 }
 
+//----------------------------------------------------------------------
 const removeAllCompletedBtn = document.querySelector("#remove-all-completed");
 removeAllCompletedBtn.addEventListener("click", deleteAllCompletedTodos);
