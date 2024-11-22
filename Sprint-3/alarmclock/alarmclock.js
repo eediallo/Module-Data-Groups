@@ -19,9 +19,9 @@ function setInitialMinutesAndSeconds(heading, totalTimeInSeconds) {
   const initialMinutes = Math.floor(totalTimeInSeconds / 60);
   const InitialSeconds = totalTimeInSeconds % 60;
 
-  heading.innerText = `Time Remaining: ${formatTimeUnit(
-    initialMinutes
-  )}:${formatTimeUnit(InitialSeconds)}`;
+  const formattedMinutes = formatTimeUnit(initialMinutes)
+  const formattedSeconds = formatTimeUnit(InitialSeconds)
+  heading.innerText = `Time Remaining: ${formattedMinutes}:${formattedSeconds}`
 }
 
 //================countDownEverySeconds======================
@@ -30,9 +30,10 @@ function countDownEverySeconds(totalTimeInSeconds, heading) {
     totalTimeInSeconds--;
     const totalMinutes = Math.floor(totalTimeInSeconds / 60);
     const remainingSeconds = totalTimeInSeconds % 60;
-    heading.innerText = `Time Remaining: ${formatTimeUnit(
-      totalMinutes
-    )}:${formatTimeUnit(remainingSeconds)}`;
+
+    const formattedMinutes = formatTimeUnit(totalMinutes)
+    const formattedSeconds = formatTimeUnit(remainingSeconds)
+    heading.innerText = `Time Remaining: ${formattedMinutes}:${formattedSeconds}`;
 
     playAudioWhenTimerReachesZero(totalTimeInSeconds, setIntervalId);
   }, 1000);
