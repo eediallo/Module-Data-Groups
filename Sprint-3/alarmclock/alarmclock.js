@@ -17,10 +17,10 @@ function setAlarm() {
 }
 
 //=========formatAndDisplayTime=========================
-function formatAndDisplayTime(text, minutes, seconds ){
+function formatAndDisplayTime(minutes, seconds ){
   const formattedMinutes = formatTimeUnit(minutes)
   const formattedSeconds = formatTimeUnit(seconds)
-  heading.innerText = `${text} ${formattedMinutes}:${formattedSeconds}`
+  heading.innerText = `${headerText} ${formattedMinutes}:${formattedSeconds}`
 }
 
 //===============calculateMinutesAndSeconds================
@@ -33,7 +33,7 @@ function calculateMinutesAndSeconds(totalTimeInSeconds){
 //=============setInitialMinutesAndSeconds=======================
 function setInitialMinutesAndSeconds(totalTimeInSeconds) {
   const [initialMinutes, InitialSeconds] = calculateMinutesAndSeconds(totalTimeInSeconds)
-  formatAndDisplayTime(headerText, initialMinutes, InitialSeconds)
+  formatAndDisplayTime(initialMinutes, InitialSeconds)
 }
 
 //================countDownEverySeconds======================
@@ -41,7 +41,7 @@ function countDownEverySeconds(totalTimeInSeconds) {
   const setIntervalId = setInterval(() => {
     totalTimeInSeconds--;
     const [totalMinutes, remainingSeconds] = calculateMinutesAndSeconds(totalTimeInSeconds)
-    formatAndDisplayTime(headerText, totalMinutes, remainingSeconds)
+    formatAndDisplayTime(totalMinutes, remainingSeconds)
     playAudioWhenTimerReachesZero(totalTimeInSeconds, setIntervalId);
   }, 1000);
 }
