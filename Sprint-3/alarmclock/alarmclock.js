@@ -20,10 +20,15 @@ function formatAndDisplayTime(text, minutes, seconds ){
   const formattedSeconds = formatTimeUnit(seconds)
   heading.innerText = `${text} ${formattedMinutes}:${formattedSeconds}`
 }
+
+function calculateMinutesAndSeconds(totalTimeInSeconds){
+  const totalMinutes = Math.floor(totalTimeInSeconds / 60);
+  const remainingSeconds = totalTimeInSeconds % 60;
+  return [totalMinutes, remainingSeconds]
+}
 //=============setInitialMinutesAndSeconds=======================
 function setInitialMinutesAndSeconds(totalTimeInSeconds) {
-  const initialMinutes = Math.floor(totalTimeInSeconds / 60);
-  const InitialSeconds = totalTimeInSeconds % 60;
+  const [initialMinutes, InitialSeconds] = calculateMinutesAndSeconds(totalTimeInSeconds)
   formatAndDisplayTime(headerText, initialMinutes, InitialSeconds)
 }
 
@@ -31,8 +36,7 @@ function setInitialMinutesAndSeconds(totalTimeInSeconds) {
 function countDownEverySeconds(totalTimeInSeconds) {
   const setIntervalId = setInterval(() => {
     totalTimeInSeconds--;
-    const totalMinutes = Math.floor(totalTimeInSeconds / 60);
-    const remainingSeconds = totalTimeInSeconds % 60;
+    const [totalMinutes, remainingSeconds] = calculateMinutesAndSeconds(totalTimeInSeconds)
 
     formatAndDisplayTime(headerText, totalMinutes, remainingSeconds)
 
