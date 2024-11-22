@@ -6,6 +6,7 @@ const heading = document.querySelector("#timeRemaining");
 const stopBtn = document.querySelector("#stop");
 heading.innerText = "Time Remaining: 00:00";
 const headerText = 'Remaining Time:'
+
 //===========setAlarm======================
 function setAlarm() {
   const totalTimeInSeconds = parseInt(
@@ -15,17 +16,20 @@ function setAlarm() {
   countDownEverySeconds(totalTimeInSeconds);
 }
 
+//=========formatAndDisplayTime=========================
 function formatAndDisplayTime(text, minutes, seconds ){
   const formattedMinutes = formatTimeUnit(minutes)
   const formattedSeconds = formatTimeUnit(seconds)
   heading.innerText = `${text} ${formattedMinutes}:${formattedSeconds}`
 }
 
+//===============calculateMinutesAndSeconds================
 function calculateMinutesAndSeconds(totalTimeInSeconds){
   const totalMinutes = Math.floor(totalTimeInSeconds / 60);
   const remainingSeconds = totalTimeInSeconds % 60;
   return [totalMinutes, remainingSeconds]
 }
+
 //=============setInitialMinutesAndSeconds=======================
 function setInitialMinutesAndSeconds(totalTimeInSeconds) {
   const [initialMinutes, InitialSeconds] = calculateMinutesAndSeconds(totalTimeInSeconds)
@@ -37,9 +41,7 @@ function countDownEverySeconds(totalTimeInSeconds) {
   const setIntervalId = setInterval(() => {
     totalTimeInSeconds--;
     const [totalMinutes, remainingSeconds] = calculateMinutesAndSeconds(totalTimeInSeconds)
-
     formatAndDisplayTime(headerText, totalMinutes, remainingSeconds)
-
     playAudioWhenTimerReachesZero(totalTimeInSeconds, setIntervalId);
   }, 1000);
 }
