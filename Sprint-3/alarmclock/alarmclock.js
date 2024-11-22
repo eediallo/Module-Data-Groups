@@ -17,31 +17,24 @@ function setAlarm() {
 }
 
 //=========formatAndDisplayTime=========================
-function formatAndDisplayTime(minutes, seconds ){
-  const formattedMinutes = formatTimeUnit(minutes)
-  const formattedSeconds = formatTimeUnit(seconds)
-  heading.innerText = `${headerText} ${formattedMinutes}:${formattedSeconds}`
-}
-
-//===============calculateMinutesAndSeconds================
-function calculateMinutesAndSeconds(totalTimeInSeconds){
+function formatAndDisplayTime(totalTimeInSeconds){
   const totalMinutes = Math.floor(totalTimeInSeconds / 60);
   const remainingSeconds = totalTimeInSeconds % 60;
-  return [totalMinutes, remainingSeconds]
+  const formattedMinutes = formatTimeUnit(totalMinutes)
+  const formattedSeconds = formatTimeUnit(remainingSeconds)
+  heading.innerText = `${headerText} ${formattedMinutes}:${formattedSeconds}`
 }
 
 //=============setInitialMinutesAndSeconds=======================
 function setInitialMinutesAndSeconds(totalTimeInSeconds) {
-  const [initialMinutes, InitialSeconds] = calculateMinutesAndSeconds(totalTimeInSeconds)
-  formatAndDisplayTime(initialMinutes, InitialSeconds)
+  formatAndDisplayTime(totalTimeInSeconds)
 }
 
 //================countDownEverySeconds======================
 function countDownEverySeconds(totalTimeInSeconds) {
   const setIntervalId = setInterval(() => {
     totalTimeInSeconds--;
-    const [totalMinutes, remainingSeconds] = calculateMinutesAndSeconds(totalTimeInSeconds)
-    formatAndDisplayTime(totalMinutes, remainingSeconds)
+    formatAndDisplayTime(totalTimeInSeconds)
     playAudioWhenTimerReachesZero(totalTimeInSeconds, setIntervalId);
   }, 1000);
 }
