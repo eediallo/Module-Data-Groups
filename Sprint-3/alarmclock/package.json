@@ -25,5 +25,8 @@
     "setupFilesAfterEnv": [
       "./jest.setup.js"
     ]
-  }
+  },
+  "main": "alarmclock.js",
+  "keywords": [],
+  "author": ""
 }
