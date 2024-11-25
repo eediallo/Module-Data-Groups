@@ -13,7 +13,7 @@ function setAlarm() {
   const totalTimeInSeconds = parseInt(
     document.querySelector("#alarmSet").value
   );
-  setInitialMinutesAndSeconds(totalTimeInSeconds);
+  formatAndDisplayTime(totalTimeInSeconds)
   countDownEverySeconds(totalTimeInSeconds);
 }
 
@@ -24,11 +24,6 @@ function formatAndDisplayTime(totalTimeInSeconds){
   const formattedMinutes = formatTimeUnit(totalMinutes)
   const formattedSeconds = formatTimeUnit(remainingSeconds)
   heading.innerText = `${headerText} ${formattedMinutes}:${formattedSeconds}`
-}
-
-//=============setInitialMinutesAndSeconds=======================
-function setInitialMinutesAndSeconds(totalTimeInSeconds) {
-  formatAndDisplayTime(totalTimeInSeconds)
 }
 
 //================countDownEverySeconds======================
