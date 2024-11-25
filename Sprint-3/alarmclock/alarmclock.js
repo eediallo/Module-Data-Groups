@@ -2,7 +2,7 @@ const heading = document.querySelector("#timeRemaining");
 const stopBtn = document.querySelector("#stop");
 
 const headerText = 'Remaining Time:'
-formatAndDisplayTime(totalTimeInSeconds = 0) // displays initial heading with timer values (00:00)
+formatAndDisplayTime(0) // displays initial heading with timer values (00:00)
 
 //==========formatTimeUnit============
 function formatTimeUnit(unit) {
