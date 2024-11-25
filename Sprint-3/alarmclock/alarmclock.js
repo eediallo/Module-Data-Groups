@@ -1,7 +1,8 @@
 const heading = document.querySelector("#timeRemaining");
 const stopBtn = document.querySelector("#stop");
-heading.innerText = "Time Remaining: 00:00";
+
 const headerText = 'Remaining Time:'
+formatAndDisplayTime(totalTimeInSeconds = 0) // displays initial heading with timer values (00:00)
 
 //==========formatTimeUnit============
 function formatTimeUnit(unit) {
