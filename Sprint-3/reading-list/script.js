@@ -27,7 +27,12 @@ function readingList(arr) {
   arr.forEach(bookInfo => {
     const list = document.createElement("li");
     list.classList.add("item");
-    list.textContent = `${bookInfo.title} by ${bookInfo.author}`;
+    const hTitle = document.createElement('h2')
+    hTitle.textContent = bookInfo.title
+    const pAuthor = document.createElement('p')
+    pAuthor.textContent = `By ${bookInfo.author}`
+    list.appendChild(hTitle)
+    list.appendChild(pAuthor)
     bookList.append(list);
 
     const img = document.createElement("img");
