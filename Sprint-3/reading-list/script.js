@@ -21,21 +21,26 @@ const books = [
   },
 ];
 
-const readingList = document.querySelector("#reading-list");
+const bookList = document.querySelector("#reading-list");
 
-for (let bookInfo of books) {
-  const list = document.createElement("li");
-  list.classList.add("item");
-  list.textContent = `${bookInfo.title} by ${bookInfo.author}`;
-  readingList.append(list);
+function readingList(arr) {
+  arr.forEach(bookInfo => {
+    const list = document.createElement("li");
+    list.classList.add("item");
+    list.textContent = `${bookInfo.title} by ${bookInfo.author}`;
+    bookList.append(list);
 
-  const img = document.createElement("img");
-  img.setAttribute("src", bookInfo.bookCoverImage);
-  list.append(img);
+    const img = document.createElement("img");
+    img.setAttribute("src", bookInfo.bookCoverImage);
+    list.append(img);
 
-  if (bookInfo.alreadyRead) {
-    list.style.backgroundColor = "green";
-  } else {
-    list.style.backgroundColor = "red";
-  }
+    if (bookInfo.alreadyRead) {
+      list.style.backgroundColor = "green";
+    } else {
+      list.style.backgroundColor = "red";
+    }
+  })
 }
+
+
+readingList(books)
