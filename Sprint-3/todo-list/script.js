@@ -1,8 +1,9 @@
-let todos = JSON.parse(localStorage.getItem("todos")) || [
+let initialTodos = [
   { task: "Wash the dishes", completed: false },
   { task: "Do the shopping", completed: false },
 ];
 
+let todos = JSON.parse(localStorage.getItem("todos")) || initialTodos;
 
 populateTodoList(todos);
 
@@ -24,9 +25,7 @@ function populateTodoList(todos) {
     li.appendChild(binIcon);
 
     tickIcon.addEventListener("click", () => {
-      todo.completed = !todo.completed;
-      li.style.textDecoration = todo.completed ? "line-through" : "none";
-      updateLocalStorage();
+      toggleTodoCompletion(todo, li);
     });
 
     binIcon.addEventListener("click", () => {
@@ -35,11 +34,17 @@ function populateTodoList(todos) {
   });
 }
 
+function toggleTodoCompletion(todo, li) {
+  todo.completed = !todo.completed;
+  li.style.textDecoration = todo.completed ? "line-through" : "none";
+  updateLocalStorage();
+}
+
 function deleteTodoFromList(todo) {
   const todoIndex = todos.indexOf(todo);
-  // check if todo exists and delete it from the todos
   if (todoIndex > -1) {
     todos.splice(todoIndex, 1);
+    restoreInitialTodos();
     updateLocalStorage();
     populateTodoList(todos);
   }
@@ -60,8 +65,15 @@ function addNewTodo(event) {
 
 function deleteAllCompletedTodos() {
   todos = todos.filter((todo) => !todo.completed);
+  restoreInitialTodos();
   updateLocalStorage();
   populateTodoList(todos);
+}
+
+function restoreInitialTodos() {
+  if (todos.length === 0) {
+    todos = initialTodos.slice();
+  }
 }
 
 // Helper function to update local storage
