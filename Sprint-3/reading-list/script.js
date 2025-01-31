@@ -24,15 +24,15 @@ const books = [
 const bookList = document.querySelector("#reading-list");
 
 function readingList(arr) {
-  arr.forEach(bookInfo => {
+  arr.forEach((bookInfo) => {
     const list = document.createElement("li");
     list.classList.add("item");
-    const hTitle = document.createElement('h2')
-    hTitle.textContent = bookInfo.title
-    const pAuthor = document.createElement('p')
-    pAuthor.textContent = `By ${bookInfo.author}`
-    list.appendChild(hTitle)
-    list.appendChild(pAuthor)
+    const hTitle = document.createElement("h2");
+    hTitle.textContent = bookInfo.title;
+    const pAuthor = document.createElement("p");
+    pAuthor.textContent = `By ${bookInfo.author}`;
+    list.appendChild(hTitle);
+    list.appendChild(pAuthor);
     bookList.append(list);
 
     const img = document.createElement("img");
@@ -44,8 +44,7 @@ function readingList(arr) {
     } else {
       list.style.backgroundColor = "red";
     }
-  })
+  });
 }
 
-
-readingList(books)
+readingList(books);
