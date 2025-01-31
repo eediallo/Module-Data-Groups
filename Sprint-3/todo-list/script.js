@@ -1,3 +1,11 @@
+let todos = JSON.parse(localStorage.getItem("todos")) || [
+  { task: "Wash the dishes", completed: false },
+  { task: "Do the shopping", completed: false },
+];
+
+
+populateTodoList(todos);
+
 function populateTodoList(todos) {
   let list = document.getElementById("todo-list");
   list.innerHTML = ""; // resets content
@@ -18,6 +26,7 @@ function populateTodoList(todos) {
     tickIcon.addEventListener("click", () => {
       todo.completed = !todo.completed;
       li.style.textDecoration = todo.completed ? "line-through" : "none";
+      updateLocalStorage();
     });
 
     binIcon.addEventListener("click", () => {
@@ -26,26 +35,16 @@ function populateTodoList(todos) {
   });
 }
 
-//======deleteTodoFromList=======================
 function deleteTodoFromList(todo) {
   const todoIndex = todos.indexOf(todo);
   // check if todo exists and delete it from the todos
   if (todoIndex > -1) {
     todos.splice(todoIndex, 1);
+    updateLocalStorage();
     populateTodoList(todos);
   }
 }
 
-//---------------------------------------------------
-let todos = [
-  { task: "Wash the dishes", completed: false },
-  { task: "Do the shopping", completed: false },
-];
-
-// displays initial todos list
-populateTodoList(todos);
-
-//=====add a new todo to the list============================
 function addNewTodo(event) {
   event.preventDefault();
   const inputField = event.target.querySelector("#todoInput");
@@ -53,18 +52,22 @@ function addNewTodo(event) {
   if (inputFieldValue) {
     const newTodo = { task: inputFieldValue, completed: false };
     todos.push(newTodo);
+    updateLocalStorage();
     populateTodoList(todos);
     inputField.value = "";
   }
 }
 
-
-//===========================================================
 function deleteAllCompletedTodos() {
   todos = todos.filter((todo) => !todo.completed);
+  updateLocalStorage();
   populateTodoList(todos);
 }
 
-//----------------------------------------------------------------------
+// Helper function to update local storage
+function updateLocalStorage() {
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
 const removeAllCompletedBtn = document.querySelector("#remove-all-completed");
 removeAllCompletedBtn.addEventListener("click", deleteAllCompletedTodos);
