@@ -1,9 +1,4 @@
-let initialTodos = [
-  { task: "Wash the dishes", completed: false },
-  { task: "Do the shopping", completed: false },
-];
-
-let todos = JSON.parse(localStorage.getItem("todos")) || initialTodos;
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
 
 populateTodoList(todos);
 
@@ -44,7 +39,6 @@ function deleteTodoFromList(todo) {
   const todoIndex = todos.indexOf(todo);
   if (todoIndex > -1) {
     todos.splice(todoIndex, 1);
-    restoreInitialTodos();
     updateLocalStorage();
     populateTodoList(todos);
   }
@@ -65,15 +59,8 @@ function addNewTodo(event) {
 
 function deleteAllCompletedTodos() {
   todos = todos.filter((todo) => !todo.completed);
-  restoreInitialTodos();
   updateLocalStorage();
   populateTodoList(todos);
-}
-
-function restoreInitialTodos() {
-  if (todos.length === 0) {
-    todos = initialTodos.slice();
-  }
 }
 
 // Helper function to update local storage
